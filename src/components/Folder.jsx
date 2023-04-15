@@ -14,12 +14,6 @@ const styles = {
     alignItems: 'center',
     marginLeft: '1rem',
   },
-  hidden:{
-    display:'none'
-  },
-  visible: {
-
-  }
 };
 
   return (<>
