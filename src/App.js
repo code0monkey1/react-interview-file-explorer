@@ -47,18 +47,21 @@ function App() {
     const renderTree =(parent,marginLeft=1)=>{
       
       const newMargin=marginLeft+1
-      
-      parent.isFolder? return (<div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
+      return (parent.isFolder?  
+
+      (<div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
             <Folder  data={parent}/>
             {
               parent.open?parent.items.map(item=> renderTree(item)):''
             }
-            </div>
-      : 
-<div style={{marginLeft:`${newMargin}rem`}}>
+      </div>) 
+            : 
+      (<div style={{marginLeft:`${newMargin}rem`}}>
                <File data={parent}/> 
-             </div>
+      </div>)
+
       )
+      
     }
 
     
