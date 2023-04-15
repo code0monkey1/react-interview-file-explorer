@@ -21,14 +21,9 @@ const styles = {
 
   }
 };
-  
- const setFileOrFolder=({target:{name}}) => {
-      console.log('clicked with name',name)
-        setFileType(name)
- }
 
   return (<>
- <div style={styles.container} onClick={setFileOrFolder}>
+    <div style={styles.container} onClick={({target:{name}}) => {setFileType(name)}}>
       <div style={styles.buttonContainer}>
         <img id={data.id} src={image} alt="folder" width={60} height={60} />
         <div style={{ paddingTop: '1rem' }} id={data.id}>{data.name}</div>
@@ -41,7 +36,7 @@ const styles = {
       </div>
     </div>
     <br/>
-     <form style={{marginLeft:"1rem"}}>
+     <form style={{marginLeft:"3.2rem"}}>
              <div>Whatever</div>
       </form>
     </>
