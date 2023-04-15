@@ -82,7 +82,9 @@ const Folder = () => {
   }
 
   const toggleOpen=(id)=>{
-      
+
+        setData({...data, open: !data.open})
+  
   }
 
   return (<>
