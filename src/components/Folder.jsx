@@ -76,9 +76,10 @@ const Folder = () => {
         })
 
   const getNewStruct=(node=data,id)=>{
-       if(node.isFolder && node.id===id){
-          
-       }   
+
+     const copy=JSON.parse(JSON.stringify(data));
+
+       console.log()
   }
 
   const toggleOpen=(id)=>{
@@ -86,7 +87,8 @@ const Folder = () => {
         setData({...data, open: !data.open})
   
   }
-
+       const copy=JSON.parse(JSON.stringify(data));
+  console.log("copy",copy)
   return (<>
    <div style={{display: "flex" }}>
     <img  id={data.id} onClick={()=>{toggleOpen(data.id)}}  src ={image} alt="folder" width={50} height={50}/>
