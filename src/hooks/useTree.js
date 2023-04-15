@@ -11,6 +11,9 @@ const useTree=(treeData)=>{
     }, [])
      
 
+const addNode = (node) =>{
+    
+}
 const getToggledTree=(event,data)=>{
         
           const head=JSON.parse(JSON.stringify(data));
