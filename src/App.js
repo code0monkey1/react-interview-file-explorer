@@ -13,23 +13,19 @@ function App() {
 
           const head=JSON.parse(JSON.stringify(data));
             
-
           function toggle(head,id){
-              if(head.isFolder && head.id===id) {
+              if(head.isFolder && head.id===id) 
                 head.open=!head.open
-                console.log("HEAD CHANGING",JSON.stringify(head,null,2));
-              }
                  
                 for (let item of head.items)
-                  toggle(item,id)     
-              
+                  toggle(item,id)      
           }
           
            toggle(head,id)
 
           setData(head)
 
-          console.log("changed head is",JSON.stringify(head,null,2))
+
   }
    
   
