@@ -7,7 +7,6 @@ import foldersData from './data/folderData';
 function App() {
 
   const [data,setData]=useState(foldersData)
-  const [clickedButtonId, setClickedButtonId] = useState(null);
 
  const closeFolders =(items)=>{  
   
@@ -24,22 +23,22 @@ function App() {
         
           const head=JSON.parse(JSON.stringify(data));
 
-          setClickedButtonId(event.target.id);
+          const id=event.target.id
 
           console.log("The id obtained is",event.target.id);
             
-          function toggle(head,clickedButtonId){
+          function toggle(head,id){
              
-            if(head.isFolder && head.id===clickedButtonId) {
+            if(head.isFolder && head.id===id) {
                  head.open=!head.open;
               
                  closeFolders(head.items)            
             }               
                           
              for (let item of head.items)
-                  toggle(item,clickedButtonId)      
+                  toggle(item,id)      
           }
-          toggle(head,clickedButtonId)
+          toggle(head,id)
 
           setData(head)
   }
