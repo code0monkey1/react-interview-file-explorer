@@ -8,10 +8,9 @@ function App() {
 
   const [data,setData]=useState(foldersData)
 
- const closeFolders =(folder)=>{  
-       folder.open=false;
+ const closeFolders =(items)=>{  
       
-      for(let subItem of folder.items){
+      for(let subItem of items){
          if(subItem.isFolder)
              closeFolders(subItem)
       }
@@ -22,8 +21,11 @@ function App() {
             
           function toggle(head,id){
              
-            if(head.isFolder && head.id===id) 
-                  closeFolders(head)
+            if(head.isFolder && head.id===id) {
+                 head.open=!head.open
+                 closeFolders(head.items)
+            }
+                  
                           
              for (let item of head.items)
                   toggle(item,id)      
