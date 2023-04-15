@@ -37,7 +37,7 @@ const styles = {
     </div>
     <br/>
      <form style={{marginLeft:"3.2rem",display:(fileType?'':"none")}}>
-             <div>Whatever</div>
+            <input type='text' placeholder={`name of the ${fileType}`}></input>
       </form>
     </>
   )
