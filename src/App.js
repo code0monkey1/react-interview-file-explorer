@@ -19,6 +19,7 @@ function App() {
          }
       }
  }
+ 
   const toggleOpen=(event)=>{
         
           const head=JSON.parse(JSON.stringify(data));
@@ -27,7 +28,13 @@ function App() {
 
           console.log("The id obtained is",event.target.id);
             
-          function toggle(head,id){
+         
+          toggle(head,id)
+
+          setData(head)
+  }
+
+   function toggle(head,id){
              
             if(head.isFolder && head.id===id) {
                  head.open=!head.open;
@@ -38,10 +45,6 @@ function App() {
              for (let item of head.items)
                   toggle(item,id)      
           }
-          toggle(head,id)
-
-          setData(head)
-  }
    
   
     const renderTree =(parent,marginLeft=1)=>{
