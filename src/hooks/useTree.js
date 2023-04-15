@@ -10,9 +10,9 @@ import { useEffect, useState } from "react";
        setTree(treeData)
     }, [])
 
-const getToggledTree=(event,data)=>{
+const getToggledTree=(event)=>{
         
-          const head=JSON.parse(JSON.stringify(data));
+          const head=JSON.parse(JSON.stringify(treeData));
 
           const id=event.target.id
 
