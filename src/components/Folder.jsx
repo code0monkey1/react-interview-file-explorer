@@ -94,7 +94,7 @@ function toggle(head,id){
             
            toggle(head,id)
 
-           return head
+          setData(head)
   }
 
        const copy=JSON.parse(JSON.stringify(data));
