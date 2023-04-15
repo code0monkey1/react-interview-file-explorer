@@ -38,7 +38,7 @@ const Folder = ({data}) => {
   <div  id={data.id}>
     <div  
      style={styles.container} 
-     onClick={({target:{name}}) => {setFileType(name)}}>
+     onClick={({target:{name}},stopPropagation) => {setFileType(name); stopPropagation()}}>
       
       <div style={styles.buttonContainer}>
         <img src={image} alt="folder" width={60} height={60} />
