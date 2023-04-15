@@ -20,7 +20,7 @@ const Folder = ({data}) => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (inputRef.current && !inputRef.current.contains(event.target)) {
+      if (inputRef.current && !inputRef.current===event.target) {
         console.log('Clicked outside');
         setFileType(null)
       }
