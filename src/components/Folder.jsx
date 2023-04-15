@@ -22,6 +22,7 @@ const Folder = ({data}) => {
     const handleClickOutside = (event) => {
       if (inputRef.current && !inputRef.current.contains(event.target)) {
         console.log('Clicked outside');
+        setFileType(null)
       }
     };
 
