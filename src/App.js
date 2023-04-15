@@ -9,7 +9,9 @@ function App() {
   const [data,setData]=useState(foldersData)
 
  const closeFolders =(items)=>{  
+  
       items.open=false;
+
       for(let subItem of items){
          if(subItem.isFolder){
             subItem.open=false;
@@ -26,21 +28,15 @@ function App() {
             if(head.isFolder && head.id===id) {
                  head.open=!head.open;
               
-                 closeFolders(head.items)
-               
-                 
-            }
-                  
+                 closeFolders(head.items)            
+            }               
                           
              for (let item of head.items)
                   toggle(item,id)      
           }
-          
-           toggle(head,id)
+          toggle(head,id)
 
           setData(head)
-
-
   }
    
   
