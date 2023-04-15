@@ -2,12 +2,12 @@ import { useState } from 'react';
 import './App.css';
 import File from './components/File.jsx';
 import Folder from './components/Folder.jsx';
-import foldersData from './data/folderData';
+import treeData from './data/folderData';
 import getToggledTree from './utils/toggleOpen';
 
 function App() {
 
-  const [data,setData]=useState(foldersData)
+  const [data,setData]=useState(treeData)
 
     const getRenderedTree =(parent,marginLeft=1)=>{
       
