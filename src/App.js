@@ -7,6 +7,7 @@ import foldersData from './data/folderData';
 function App() {
 
   const [data,setData]=useState(foldersData)
+  const [clickedButtonId, setClickedButtonId] = useState(1);
 
  const closeFolders =(items)=>{  
   
@@ -19,22 +20,26 @@ function App() {
          }
       }
  }
-  const toggleOpen=(id)=>{
-
+  const toggleOpen=(event)=>{
+        
+       
+   
           const head=JSON.parse(JSON.stringify(data));
+
+          setClickedButtonId(event.target.id);
             
-          function toggle(head,id){
+          function toggle(head,clickedButtonId){
              
-            if(head.isFolder && head.id===id) {
+            if(head.isFolder && head.id===clickedButtonId) {
                  head.open=!head.open;
               
                  closeFolders(head.items)            
             }               
                           
              for (let item of head.items)
-                  toggle(item,id)      
+                  toggle(item,clickedButtonId)      
           }
-          toggle(head,id)
+          toggle(head,clickedButtonId)
 
           setData(head)
   }
@@ -49,7 +54,7 @@ function App() {
         return <><div    key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
 
         
-            <Folder toggleOpen={toggleOpen} data={parent}/>
+            <Folder  data={parent}/>
             {
               parent.open?parent.items.map(item=> renderTree(item)):''
             }
@@ -68,7 +73,7 @@ function App() {
 
     
   return (
-  <div style={{margin:"4rem"}}>
+  <div onClick={toggleOpen} style={{margin:"4rem"}}>
       {
           renderTree(data)
       }
