@@ -87,8 +87,10 @@ const Folder = () => {
             
 
           function toggle(head,id){
-              if(head.isFolder && head.id===id) 
+              if(head.isFolder && head.id===id) {
                 head.open=!head.open
+                console.log("HEAD CHANGING",JSON.stringify(head,null,2));
+              }
                  
                 for (let item of head.items)
                   toggle(item,id)     
