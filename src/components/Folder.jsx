@@ -37,9 +37,9 @@ const Folder = ({data}) => {
 
 
   return (<>
-    <div style={styles.container} onClick={({target:{name}}) => {setFileType(name)}}>
+    <div  id={data.id} style={styles.container} onClick={({target:{name}}) => {setFileType(name)}}>
       <div style={styles.buttonContainer}>
-        <img id={data.id} src={image} alt="folder" width={60} height={60} />
+        <img src={image} alt="folder" width={60} height={60} />
         <div style={{ paddingTop: '1rem' }} >{data.name}</div>
       </div>
      

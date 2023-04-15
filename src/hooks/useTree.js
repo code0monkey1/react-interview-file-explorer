@@ -24,7 +24,7 @@ const getToggledTree=(id)=>{
   }
 
 function toggleItem(head,id){
-             
+             console.log("The id is: ",id)
             if(head.isFolder && head.id===id) {
                  head.open=!head.open;
               
