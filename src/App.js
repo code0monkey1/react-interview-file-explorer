@@ -8,14 +8,25 @@ function App() {
 
   const [data,setData]=useState(foldersData)
 
-    
+ const closeFolders =(folder)=>{
+      
+  folder.open=false;
+      
+      for(let subItem of folder.items){
+         if(subItem.isFolder)
+             closeFolders(subItem)
+      }
+ }
   const toggleOpen=(id)=>{
 
           const head=JSON.parse(JSON.stringify(data));
             
           function toggle(head,id){
-              if(head.isFolder && head.id===id) 
+              if(head.isFolder && head.id===id) {
+
                 head.open=!head.open
+
+                 }
                  
                 for (let item of head.items)
                   toggle(item,id)      
