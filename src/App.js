@@ -37,7 +37,7 @@ function App() {
     
       if (parent.isFolder && parent.open){
         return <>
-            <Folder/>
+            <Folder toggleOpen={toggleOpen}/>
             {
               parent.items.map(item=> renderTree(item))
             }
@@ -51,7 +51,9 @@ function App() {
     
   return (
   <div style={{margin:"4rem"}}>
-      <Folder/>
+      {
+          renderTree(data)
+      }
       </div>
 
   );
