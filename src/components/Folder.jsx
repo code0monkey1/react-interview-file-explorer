@@ -3,10 +3,10 @@ import image from './folder.png';
 const Folder = ({data,toggleOpen}) => {
   
   
-       const copy=JSON.parse(JSON.stringify(data));
+   const copy=JSON.parse(JSON.stringify(data));
   console.log("copy",copy)
   return (<>
-   <div style={{display: "flex"  }}>
+   <div style={{display: "flex" ,flexDirection: "column"}}>
     <div style={{display: "flex" }}>
       <img  id={data.id} onClick={()=>{toggleOpen(data.id)}}  src ={image} alt="folder" width={50} height={50}/>
       <div style={{paddingTop:"1rem"}} id={data.id}>{data.name}</div>
@@ -14,7 +14,7 @@ const Folder = ({data,toggleOpen}) => {
     </div>
     <div style={{display: "flex"  }}>
       <button>Add File</button>
-      <div>Add Folder</div>
+      <button style={{marginLeft:"0.5rem"}}>Add Folder</button>
     </div>
     </>
   )
