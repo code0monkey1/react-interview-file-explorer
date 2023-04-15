@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 
-const useTree=(treeData)=>{
+ const useTree=(treeData)=>{
 
      const [tree,setTree]=useState()
 
@@ -55,3 +55,5 @@ const closeItems =(items)=>{
  }
 
 }
+
+export default useTree
