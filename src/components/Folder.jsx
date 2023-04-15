@@ -19,7 +19,7 @@ const styles = {
   return (<>
  <div style={styles.container}>
       <div style={styles.buttonContainer}>
-        <img id={data.id} onClick={() => toggleOpen(data.id)} src={image} alt="folder" width={50} height={50} />
+        <img id={data.id} onClick={() => toggleOpen(data.id)} src={image} alt="folder" width={60} height={60} />
         <div style={{ paddingTop: '1rem' }} id={data.id}>{data.name}</div>
       </div>
       <div style={styles.buttonContainer}>
