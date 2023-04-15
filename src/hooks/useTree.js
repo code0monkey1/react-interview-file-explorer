@@ -14,15 +14,10 @@ const useTree=(treeData)=>{
 const addNode = (node) =>{
     
 }
-const getToggledTree=(event)=>{
+const getToggledTree=(id)=>{
         
           const head=JSON.parse(JSON.stringify(tree));
-
-          const id=event.target.id
-
-          console.log("The id obtained is",event.target.id);
-            
-         
+                 
           toggleItem(head,id)
 
           return head;
