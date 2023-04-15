@@ -11,9 +11,11 @@ function App() {
 
     const getRenderedTree =(parent,marginLeft=1)=>{
       
+      if(!parent)return;
+
       const newMargin=marginLeft+1
-      
-      return parent && ( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
+
+      return( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
         {parent.isFolder? <> 
               <Folder  data={parent}/>
               {
