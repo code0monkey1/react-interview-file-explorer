@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import image from './folder.png';
-
 const Folder = ({data}) => {
   
+  const[add,setAdd]=useState(false)
+
 const styles = {
   container: {
     display: 'flex',
@@ -28,14 +30,16 @@ const styles = {
         <img id={data.id} src={image} alt="folder" width={60} height={60} />
         <div style={{ paddingTop: '1rem' }} id={data.id}>{data.name}</div>
       </div>
-      <form style={styles.form}>
-
-      </form>
+     
       <div style={styles.buttonContainer}>
         <button>Add File</button>
         <button style={{ marginLeft: '0.5rem' }}>Add Folder</button>
       </div>
     </div>
+    <br/>
+     <form style={styles.form}>
+             <div>Whatever</div>
+      </form>
     </>
   )
 }
