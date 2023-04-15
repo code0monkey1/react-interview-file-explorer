@@ -4,7 +4,7 @@ import image from './folder.png';
 const Folder = () => {
   
   const [data,setData]=useState({
-          id:"2",
+          id:"10",
           name: "root",
           isFolder: true,
           open:false,
@@ -63,6 +63,7 @@ const Folder = () => {
                   id:"10",
                   name: "styles.css",
                   isFolder: false,
+                  isOpen: false,
                   items: []
                 }
               ]
