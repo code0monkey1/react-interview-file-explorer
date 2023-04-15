@@ -36,7 +36,7 @@ const styles = {
       </div>
     </div>
     <br/>
-     <form style={{marginLeft:"3.2rem"}}>
+     <form style={{marginLeft:"3.2rem",display:(fileType?'':"none")}}>
              <div>Whatever</div>
       </form>
     </>
