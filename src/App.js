@@ -11,8 +11,10 @@ function App() {
  const closeFolders =(items)=>{  
       items.open=false;
       for(let subItem of items){
-         if(subItem.isFolder)
+         if(subItem.isFolder){
+            subItem.open=false;
              closeFolders(subItem.items)
+         }
       }
  }
   const toggleOpen=(id)=>{
@@ -23,12 +25,9 @@ function App() {
              
             if(head.isFolder && head.id===id) {
                  head.open=!head.open;
-                //  try{
-                //   closeFolders(head.items)
-                //  }
-                //  catch{
-                //   console.error("head is",JSON.stringify(head,null,2))
-                //  }
+              
+                 closeFolders(head.items)
+               
                  
             }
                   
