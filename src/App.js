@@ -34,7 +34,7 @@ function App() {
 
       setTree(newTree)
   }
-    
+   console.log("The tree data is: " + JSON.stringify(data,null,2)) 
   return (
     <div onClick={(event)=>toggler(event,data)} style={{margin:"4rem"}}>
       {
