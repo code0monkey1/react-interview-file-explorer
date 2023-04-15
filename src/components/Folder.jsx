@@ -12,6 +12,12 @@ const styles = {
     alignItems: 'center',
     marginLeft: '1rem',
   },
+  hidden:{
+    display:'none'
+  },
+  visible: {
+
+  }
 };
   
 
@@ -22,6 +28,9 @@ const styles = {
         <img id={data.id} src={image} alt="folder" width={60} height={60} />
         <div style={{ paddingTop: '1rem' }} id={data.id}>{data.name}</div>
       </div>
+      <form style={styles.form}>
+
+      </form>
       <div style={styles.buttonContainer}>
         <button>Add File</button>
         <button style={{ marginLeft: '0.5rem' }}>Add Folder</button>
