@@ -8,7 +8,7 @@ function App() {
 
   const [data,setData]=useState(foldersData)
 
-          
+    
   const toggleOpen=(id)=>{
 
           const head=JSON.parse(JSON.stringify(data));
@@ -36,14 +36,16 @@ function App() {
     const renderTree =(parent)=>{
     
       if (parent.isFolder && parent.open){
+        console.log("is f0lder",JSON.stringify(parent,null,2))
         return <>
-            <Folder toggleOpen={toggleOpen}/>
+            <Folder toggleOpen={toggleOpen} />
             {
               parent.items.map(item=> renderTree(item))
             }
         </>
       }
       else{
+        console.log("is file",JSON.stringify(parent,null,2))
            return <File/>
       }
     }
