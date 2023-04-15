@@ -7,7 +7,7 @@ import foldersData from './data/folderData';
 function App() {
 
   const [data,setData]=useState(foldersData)
-  const [clickedButtonId, setClickedButtonId] = useState(1);
+  const [clickedButtonId, setClickedButtonId] = useState(null);
 
  const closeFolders =(items)=>{  
   
@@ -22,11 +22,11 @@ function App() {
  }
   const toggleOpen=(event)=>{
         
-       
-   
           const head=JSON.parse(JSON.stringify(data));
 
           setClickedButtonId(event.target.id);
+
+          console.log("The id obtained is",event.target.id);
             
           function toggle(head,clickedButtonId){
              
@@ -51,7 +51,7 @@ function App() {
       
       if (parent.isFolder){
     
-        return <><div    key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
+        return <><div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
 
         
             <Folder  data={parent}/>
