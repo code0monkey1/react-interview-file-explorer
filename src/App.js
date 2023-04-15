@@ -3,50 +3,12 @@ import './App.css';
 import File from './components/File.jsx';
 import Folder from './components/Folder.jsx';
 import foldersData from './data/folderData';
+import getToggledTree from './utils/toggleOpen';
 
 function App() {
 
   const [data,setData]=useState(foldersData)
 
- const closeFolders =(items)=>{  
-  
-      items.open=false;
-
-      for(let subItem of items){
-         if(subItem.isFolder){
-            subItem.open=false;
-             closeFolders(subItem.items)
-         }
-      }
- }
- 
-  const toggleOpen=(event)=>{
-        
-          const head=JSON.parse(JSON.stringify(data));
-
-          const id=event.target.id
-
-          console.log("The id obtained is",event.target.id);
-            
-         
-          toggle(head,id)
-
-          setData(head)
-  }
-
-   function toggle(head,id){
-             
-            if(head.isFolder && head.id===id) {
-                 head.open=!head.open;
-              
-                 closeFolders(head.items)            
-            }               
-                          
-             for (let item of head.items)
-                  toggle(item,id)      
-          }
-   
-  
     const renderTree =(parent,marginLeft=1)=>{
       
       const newMargin=marginLeft+1
@@ -66,13 +28,19 @@ function App() {
       )
       
     }
+  
+  const toggler=(event,data)=>{
 
+      const newTree=getToggledTree(event,data)
+
+      setData(newTree)
+  }
     
   return (
-  <div onClick={toggleOpen} style={{margin:"4rem"}}>
+    <div onClick={(event)=>toggler(event,data)} style={{margin:"4rem"}}>
       {
           renderTree(data)
-      }
+      } 
       </div>
 
   );
