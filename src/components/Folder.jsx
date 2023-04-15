@@ -4,7 +4,7 @@ import image from './folder.png';
 const Folder = () => {
   
   const [data,setData]=useState({
-          id:"10",
+          id:"2",
           name: "root",
           isFolder: true,
           open:false,
@@ -13,6 +13,7 @@ const Folder = () => {
               id:"2",
               name: "public",
               isFolder: true,
+              open:false,
               items: [
                 {
                   id:"3",
@@ -83,16 +84,12 @@ const Folder = () => {
             
 
           function toggle(head,id){
-              if(head.isFolder && head.id===id) {
+              if(head.isFolder && head.id===id) 
                 head.open=!head.open
-                return
-              }
+                 
+                for (let item of head.items)
+                  toggle(item,id)     
               
-              else {
-                for (let item of head.items){
-                  toggle(item,id)
-                }
-              }
           }
           
            toggle(head,id)
