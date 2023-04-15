@@ -37,7 +37,7 @@ function toggleItem(head,id){
                   toggleItem(item,id)      
           }
    
-const closeItems =(items)=>{  
+function closeItems(items){  
   
       items.open=false;
 
