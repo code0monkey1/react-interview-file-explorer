@@ -77,9 +77,6 @@ const Folder = () => {
           ]
         })
 
-  const renderChildren =(children)=>{
-       
-  }
           
   const toggleOpen=(id)=>{
 
