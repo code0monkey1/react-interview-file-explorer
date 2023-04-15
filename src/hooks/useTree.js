@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const useTree=(treeData)=>{
 
-     const [tree,setTree]=useState()
+     const [tree,setTree]=useState(null)
 
      useEffect(() => {
      
@@ -52,7 +52,8 @@ const closeItems =(items)=>{
 
  return{
   getToggledTree,
-  tree
+  tree,
+  setTree
  }
 
 }
