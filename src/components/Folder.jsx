@@ -75,18 +75,22 @@ const Folder = () => {
           ]
         })
 
-  const getNewStruct=(node=data,id)=>{
-
-     const copy=JSON.parse(JSON.stringify(data));
-
-       console.log()
-  }
-
   const toggleOpen=(id)=>{
 
-        setData({...data, open: !data.open})
-  
+          const head=JSON.parse(JSON.stringify(data));
+            
+          function toggle(head,id){
+              if(head.isFolder && head.id===id) head.open=!head.open
+              
+              else {
+                for (let item of head.items){
+                  toggle(item,id)
+                }
+              }
+          }
+
   }
+
        const copy=JSON.parse(JSON.stringify(data));
   console.log("copy",copy)
   return (<>
