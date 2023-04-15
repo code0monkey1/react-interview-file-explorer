@@ -35,7 +35,7 @@ function App() {
   
     const renderTree =(parent)=>{
     
-      if (parent.isFolder){
+      if (parent.isFolder && parent.open){
         return <>
             <Folder/>
             {
