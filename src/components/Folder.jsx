@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import image from './folder.png';
 
 const Folder = ({data,toggleOpen}) => {
@@ -10,13 +9,6 @@ const Folder = ({data,toggleOpen}) => {
    <div style={{display: "flex" }}>
     <img  id={data.id} onClick={()=>{toggleOpen(data.id)}}  src ={image} alt="folder" width={50} height={50}/>
     <div style={{paddingTop:"1rem"}} id={data.id}>{data.name}</div>
-    {
-      data.open ? <>
-      
-       <div>Open</div>
-      
-      </>:''
-    }
     </div> 
     </>
   )
