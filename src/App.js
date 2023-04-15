@@ -31,17 +31,20 @@ function App() {
 
           console.log("changed head is",JSON.stringify(head,null,2))
   }
-
+   
   
-    const renderTree =(parent)=>{
-    
+    const renderTree =(parent,marginLeft=1)=>{
+      const newMargin=marginLeft+1
       if (parent.isFolder){
         console.log("is folder",JSON.stringify(parent,null,2))
-        return <>
+        return <><div style={{marginLeft:`${newMargin}rem`}}>
+
+        
             <Folder  key={parent.id}toggleOpen={toggleOpen} data={parent}/>
             {
               parent.open?parent.items.map(item=> renderTree(item)):''
             }
+            </div>
         </>
       }
       else{
