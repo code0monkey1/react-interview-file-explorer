@@ -75,9 +75,9 @@ const Folder = () => {
           ]
         })
 
-  const toggleFolderWith=(node,id)=>{
+  const getNewStruct=(node=data,id)=>{
        if(node.isFolder && node.id===id){
-
+          
        }   
   }
 
