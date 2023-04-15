@@ -22,7 +22,9 @@ const styles = {
   }
 };
   
-
+ const setFileOrFolder=(event) => {
+  console.log(event.target.name)
+ }
 
   return (<>
  <div style={styles.container}>
@@ -32,8 +34,9 @@ const styles = {
       </div>
      
       <div style={styles.buttonContainer}>
-        <button onClick={()=>setFileType('file')}>Add File</button>
-        <button onClick={()=>setFileType('folder')} style={{ marginLeft: '0.5rem' }}>Add Folder</button>
+        <button  name='file'
+         onClick={setFileOrFolder}>Add File</button>
+        <button name='folder' onClick={setFileOrFolder} style={{ marginLeft: '0.5rem' }}>Add Folder</button>
       </div>
     </div>
     <br/>
