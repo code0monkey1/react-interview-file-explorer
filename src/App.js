@@ -49,7 +49,11 @@ function App() {
       }
       else{
         console.log("is file",JSON.stringify(parent,null,2))
-           return <File/>
+            return <>
+            <div style={{marginLeft:`${newMargin}rem`}}>
+               <File/> 
+             </div>
+          </>
       }
     }
 
