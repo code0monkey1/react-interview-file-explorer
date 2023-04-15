@@ -9,14 +9,14 @@ function App() {
 
   const [data,setData]=useState(foldersData)
 
-    const renderTree =(parent,marginLeft=1)=>{
+    const getRenderedTree =(parent,marginLeft=1)=>{
       
       const newMargin=marginLeft+1
       return ( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
         {parent.isFolder? <> 
               <Folder  data={parent}/>
               {
-                parent.open?parent.items.map(item=> renderTree(item)):''
+                parent.open?parent.items.map(item=> getRenderedTree(item)):''
               }
             </>
             : 
@@ -24,7 +24,6 @@ function App() {
         }
       </div>)
 
-      
     }
   
   const toggler=(event,data)=>{
@@ -37,7 +36,7 @@ function App() {
   return (
     <div onClick={(event)=>toggler(event,data)} style={{margin:"4rem"}}>
       {
-          renderTree(data)
+          getRenderedTree(data)
       } 
       </div>
 
