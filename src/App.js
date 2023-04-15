@@ -12,6 +12,7 @@ function App() {
     const getRenderedTree =(parent,marginLeft=1)=>{
       
       const newMargin=marginLeft+1
+      
       return parent && ( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
         {parent.isFolder? <> 
               <Folder  data={parent}/>
@@ -25,15 +26,9 @@ function App() {
       </div>)
     }
   
-  const toggler=(event)=>{
-   
-      const newTree=getToggledTree(event.target.id)
-
-      setTree(newTree)
-  }
 
   return (
-    <div onClick={toggler} style={{margin:"4rem"}}>
+    <div onClick={({target})=>{setTree(getToggledTree(target.id))}} style={{margin:"4rem"}}>
       {
           getRenderedTree(data)
       } 
