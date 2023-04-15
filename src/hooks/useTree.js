@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 
- const useTree=(treeData)=>{
+const useTree=(treeData)=>{
 
      const [tree,setTree]=useState()
 
@@ -9,10 +9,11 @@ import { useEffect, useState } from "react";
      
        setTree(treeData)
     }, [])
+     
 
-const getToggledTree=(event)=>{
+const getToggledTree=(event,data)=>{
         
-          const head=JSON.parse(JSON.stringify(treeData));
+          const head=JSON.parse(JSON.stringify(data));
 
           const id=event.target.id
 
@@ -51,8 +52,7 @@ const closeItems =(items)=>{
 
  return{
   getToggledTree,
-  tree,
-  setTree
+  tree
  }
 
 }

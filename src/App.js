@@ -25,15 +25,15 @@ function App() {
       </div>)
     }
   
-  const toggler=(event)=>{
+  const toggler=(event,data)=>{
 
-      const newTree=getToggledTree(event)
+      const newTree=getToggledTree(event,data)
 
       setTree(newTree)
   }
 
   return (
-    <div onClick={toggler} style={{margin:"4rem"}}>
+    <div onClick={(event)=>toggler(event,data)} style={{margin:"4rem"}}>
       {
           getRenderedTree(data)
       } 
