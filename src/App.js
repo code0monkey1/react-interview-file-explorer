@@ -12,7 +12,7 @@ function App() {
     
       for(let subItem of items){
          if(subItem.isFolder)
-             closeFolders(subItem)
+             closeFolders(subItem.items)
       }
  }
   const toggleOpen=(id)=>{
