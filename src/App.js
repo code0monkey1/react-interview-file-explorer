@@ -38,7 +38,7 @@ function App() {
       if (parent.isFolder){
         console.log("is folder",JSON.stringify(parent,null,2))
         return <>
-            <Folder toggleOpen={toggleOpen} data={parent}/>
+            <Folder  key={parent.id}toggleOpen={toggleOpen} data={parent}/>
             {
               parent.open?parent.items.map(item=> renderTree(item)):''
             }
