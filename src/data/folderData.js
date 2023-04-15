@@ -15,7 +15,6 @@ const data = {
   isFolder: true,
   items: Array.from({ length: 5 }, (_, i) => generateExplorer(`2-${i}`, 1, 2)),
 };
-
 // const data = {
 //   id: '1',
 //   name: 'root',
