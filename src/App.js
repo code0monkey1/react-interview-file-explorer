@@ -22,7 +22,7 @@ function App() {
           function toggle(head,id){
              
             if(head.isFolder && head.id===id) {
-                 head.open=!head.open
+                 head.open=head.open?!head.open:false
                  closeFolders(head.items)
             }
                   
