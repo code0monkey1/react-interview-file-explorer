@@ -26,7 +26,7 @@ function App() {
     }
   
   const toggler=(event,data)=>{
-
+   
       const newTree=getToggledTree(event,data)
 
       setTree(newTree)
