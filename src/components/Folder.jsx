@@ -95,6 +95,8 @@ const Folder = () => {
            toggle(head,id)
 
           setData(head)
+
+          console.log("changed head is",JSON.stringify(head,null,2))
   }
 
        const copy=JSON.parse(JSON.stringify(data));
