@@ -51,7 +51,7 @@ function App() {
         console.log("is file",JSON.stringify(parent,null,2))
             return <>
             <div style={{marginLeft:`${newMargin}rem`}}>
-               <File/> 
+               <File data={parent}/> 
              </div>
           </>
       }
