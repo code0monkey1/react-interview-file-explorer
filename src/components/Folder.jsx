@@ -63,7 +63,7 @@ const Folder = () => {
                   id:"10",
                   name: "styles.css",
                   isFolder: false,
-                  isOpen: false,
+                  open: false,
                   items: []
                 }
               ]
