@@ -80,7 +80,10 @@ const Folder = () => {
           const head=JSON.parse(JSON.stringify(data));
             
           function toggle(head,id){
-              if(head.isFolder && head.id===id) head.open=!head.open
+              if(head.isFolder && head.id===id) {
+                head.open=!head.open
+                return
+              }
               
               else {
                 for (let item of head.items){
