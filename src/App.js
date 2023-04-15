@@ -9,7 +9,7 @@ function App() {
   const [data,setData]=useState(foldersData)
 
  const closeFolders =(items)=>{  
-      
+    
       for(let subItem of items){
          if(subItem.isFolder)
              closeFolders(subItem)
@@ -23,7 +23,13 @@ function App() {
              
             if(head.isFolder && head.id===id) {
                  head.open=head.open?!head.open:false
-                 closeFolders(head.items)
+                 try{
+                  closeFolders(head.items)
+                 }
+                 catch{
+                  console.error("head is",JSON.stringify(head,null,2))
+                 }
+                 
             }
                   
                           
