@@ -41,9 +41,11 @@ function App() {
    
   
     const renderTree =(parent,marginLeft=1)=>{
+      
       const newMargin=marginLeft+1
+      
       if (parent.isFolder){
-        console.log("is folder",JSON.stringify(parent,null,2))
+    
         return <><div style={{marginLeft:`${newMargin}rem`}}>
 
         
@@ -55,7 +57,7 @@ function App() {
         </>
       }
       else{
-        console.log("is file",JSON.stringify(parent,null,2))
+     
             return <>
             <div style={{marginLeft:`${newMargin}rem`}}>
                <File data={parent}/> 

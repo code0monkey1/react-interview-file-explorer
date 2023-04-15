@@ -14,8 +14,8 @@ const styles = {
   },
 };
   
-   const copy=JSON.parse(JSON.stringify(data));
-  console.log("copy",copy)
+
+
   return (<>
  <div style={styles.container}>
       <div style={styles.buttonContainer}>
