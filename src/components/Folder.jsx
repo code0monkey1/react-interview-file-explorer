@@ -34,15 +34,14 @@ const Folder = ({data}) => {
     };
   }, [inputRef]);
 
-
-
-  return (<>
+  return (
+  <div  id={data.id}>
     <div  
      style={styles.container} 
      onClick={({target:{name}}) => {setFileType(name)}}>
       
       <div style={styles.buttonContainer}>
-        <img id={data.id} src={image} alt="folder" width={60} height={60} />
+        <img src={image} alt="folder" width={60} height={60} />
         <div style={{ paddingTop: '1rem' }} >{data.name}</div>
       </div>
      
@@ -55,7 +54,7 @@ const Folder = ({data}) => {
      <form style={{marginLeft:"3.2rem",display:(fileType?'':"none")}}>
             <input ref={inputRef} type='text' placeholder={`name of the ${fileType}`}></input>
       </form>
-    </>
+    </div>
   )
 }
 
