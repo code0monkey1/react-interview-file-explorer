@@ -22,12 +22,13 @@ const styles = {
   }
 };
   
- const setFileOrFolder=(event) => {
-  console.log(event.target.name)
+ const setFileOrFolder=({target:{name}}) => {
+      console.log('clicked with name',name)
+        setFileType(name)
  }
 
   return (<>
- <div style={styles.container}>
+ <div style={styles.container} onClick={setFileOrFolder}>
       <div style={styles.buttonContainer}>
         <img id={data.id} src={image} alt="folder" width={60} height={60} />
         <div style={{ paddingTop: '1rem' }} id={data.id}>{data.name}</div>
@@ -35,8 +36,8 @@ const styles = {
      
       <div style={styles.buttonContainer}>
         <button  name='file'
-         onClick={setFileOrFolder}>Add File</button>
-        <button name='folder' onClick={setFileOrFolder} style={{ marginLeft: '0.5rem' }}>Add Folder</button>
+        >Add File</button>
+        <button name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
       </div>
     </div>
     <br/>
