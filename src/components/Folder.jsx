@@ -75,24 +75,15 @@ const Folder = () => {
           ]
         })
 
-  const findFolderWithId=(node,id)=>{
-      
-      if(node.isFolder && node.id===id) return node;
-      
-      for( const item of node.items)
-          return findFolderWithId(item,id)
-        
+  const toggleFolderWith=(node,id)=>{
+       if(node.isFolder && node.id===id){
+
+       }   
   }
 
   const toggleOpen=(id)=>{
       
-    const folder = findFolderWithId(data,id)
-    
-    setData(data => {
-      
-      return {...data,open:!data.open}
-    
-    })
+  
   }
 
   return (<>
