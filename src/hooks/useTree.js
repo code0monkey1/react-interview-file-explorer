@@ -51,7 +51,8 @@ const closeItems =(items)=>{
 
  return{
   getToggledTree,
-  tree
+  tree,
+  setTree
  }
 
 }

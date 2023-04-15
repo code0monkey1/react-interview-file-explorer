@@ -3,11 +3,13 @@ import './App.css';
 import File from './components/File.jsx';
 import Folder from './components/Folder.jsx';
 import treeData from './data/folderData';
+import useTree from './hooks/useTree';
 import getToggledTree from './utils/toggleOpen';
 
 function App() {
 
-  const [data,setData]=useState(treeData)
+  // const [data,setData]=useState(treeData)
+           const{tree:data,getToggledTree,setTree} =  useTree(treeData)
 
     const getRenderedTree =(parent,marginLeft=1)=>{
       
@@ -30,7 +32,7 @@ function App() {
 
       const newTree=getToggledTree(event,data)
 
-      setData(newTree)
+      setTree(newTree)
   }
     
   return (
