@@ -9,7 +9,7 @@ function App() {
 
     const{tree:data,getToggledTree,setTree} =  useTree(treeData)
 
-    const getRenderedTree =(parent,marginLeft=1)=>{
+    const getRenderedTree =(parent,marginLeft=0.5)=>{
       
       if(!parent)return;
 
