@@ -65,9 +65,7 @@ function App() {
   
   const handleClick=({target})=>{
          
-          
         setTree(getToggledTree(target.id))
-     
    
      }
 
