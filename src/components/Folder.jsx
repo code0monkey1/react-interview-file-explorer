@@ -17,9 +17,12 @@ const Folder = ({data,inputRef}) => {
    
   const[type,setType] = useState(null)
 
+
     useEffect(() => {
       const handleClickOutside = (event) => {
-          setType(null)
+        if (inputRef.current && !inputRef.current.contains(event.target)) {
+           setType(null)
+        }
       };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -27,7 +30,7 @@ const Folder = ({data,inputRef}) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [type]);
+  }, [type,inputRef]);
 
   return (
 <>
