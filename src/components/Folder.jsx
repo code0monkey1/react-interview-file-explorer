@@ -51,6 +51,7 @@ const Folder = ({data,inputRef}) => {
     </div>
     <br/>
      <div style={{marginLeft:"5rem",display:(type?'':"none")}}>
+             <img id={data.id} src={type==="file"?file:folder} alt="folder" width={60} height={60} />
             <input ref={inputRef} type='text' placeholder={`name of the ${type}`}></input>
       </div>
   </>
