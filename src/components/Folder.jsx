@@ -16,10 +16,11 @@ const styles = {
 
 const Folder = ({data,inputRef}) => {
    
-  const[type,setType] = useState('folder')
+  const[type,setType] = useState(null)
 
 
     useEffect(() => {
+
       const handleClickOutside = (event) => {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
            setType(null)
@@ -31,8 +32,10 @@ const Folder = ({data,inputRef}) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [type,inputRef]);
 
+  }, [inputRef]);
+  
+ console.log("The type is set to "+type)
   return (
 <>
     <div  
