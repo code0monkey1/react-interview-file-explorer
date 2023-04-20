@@ -17,7 +17,13 @@
 
 1. Use the `renderHook`  for rendering a hook.
    
-       ```javascript
+      ```javascript
+
           import { renderHook } from '@testing-library/react'
+
+          it('first-test',()=>{
+          const {result} = renderHook(useTree)
+          expect(result.current.tree).toEqual(undefined)
+        })
 
        ```
