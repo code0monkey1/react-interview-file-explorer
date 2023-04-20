@@ -15,7 +15,7 @@ const styles = {
 
 const Folder = ({data,inputRef}) => {
    
-  const[add,setAdd] = useState(null)
+  const[type,setType] = useState(null)
 
   return (
 <>
@@ -29,13 +29,13 @@ const Folder = ({data,inputRef}) => {
       </div>
      
       <div style={styles.buttonContainer}>
-        <button onClick={()=>{setAdd('file')}} data-id={data.id} name='file'>Add File</button>
-        <button onClick={()=>{setAdd('folder')}} data-id={data.id} name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
+        <button onClick={()=>{setType('file')}} data-id={data.id} name='file'>Add File</button>
+        <button onClick={()=>{setType('folder')}} data-id={data.id} name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
       </div>
     </div>
     <br/>
-     <div style={{marginLeft:"5rem",display:(add?'':"none")}}>
-            <input ref={inputRef} type='text' placeholder={`name of the ${inputRef.current?.value.name}`}></input>
+     <div style={{marginLeft:"5rem",display:(type?'':"none")}}>
+            <input ref={inputRef} type='text' placeholder={`name of the ${type}`}></input>
       </div>
   </>
   )
