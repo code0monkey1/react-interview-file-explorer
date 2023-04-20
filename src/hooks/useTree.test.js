@@ -13,10 +13,9 @@ describe('file-explorer',()=>{
       
         const myData=folderData
         const {result} = renderHook(useTree,{initialProps:myData})
-        
-      
-        console.log(result.current.tree)
-        
+       
+        // the data attached to `initialProps` value is the data that's passed into the useTree hook , like so => useTree(myData). You cannot pass the data directly , like so => useTree(myData )
+
         expect(result.current.tree).toBe(myData)
     })
 
