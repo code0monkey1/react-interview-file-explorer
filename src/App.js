@@ -21,6 +21,11 @@ function App() {
           console.log('Clicked outside');
            const value = inputRef.current.value.trim()
            console.log("The value is ",value)
+
+            const id = inputRef.current.getAttribute('data-id');
+            const name = inputRef.current.getAttribute('data-name');
+            console.log(`id: ${id}, name: ${name}`);
+            
            if(value){
               addNewNode({
                 id:uuid(),
@@ -62,18 +67,9 @@ function App() {
   
   const handleClick=({target})=>{
          
-       
-      if(target.name === 'file' || target.name === 'folder'){
-        console.log("the identity `id` is ",target.dataset.id)
-        setType(target.name)
-        setId(target.dataset.id)
-        return;
-      }
-      else{
           
         setTree(getToggledTree(target.id))
-        
-      }
+     
    
      }
 
