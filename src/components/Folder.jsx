@@ -34,8 +34,7 @@ const Folder = ({data,inputRef}) => {
     };
 
   }, [inputRef,type]);
-  
- console.log("The type is set to "+type)
+
   return (
 <>
     <div  
