@@ -33,7 +33,8 @@ function App() {
     <div onClick={({target})=>{
          
       if(target.name === 'add-file' || target.name === 'add-folder'){
-        addNewNode({id:target.id,name:"new-node",isFolder:true,items:[]})
+        console.log("the identity `id` is ",target.identity)
+        addNewNode({id:target.identity,name:"new-node",isFolder:true,items:[]})
         return;
       }
    
