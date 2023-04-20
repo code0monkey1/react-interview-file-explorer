@@ -42,7 +42,11 @@ describe('file-explorer',()=>{
         }
         const {result} = renderHook(useTree,{initialProps:folderData})
 
-        result.current.addNode()
+        const newNode={id:"5",name:"newNote",isFolder:false,items:[]}
+
+        result.current.addNode(2,newNode,originalTree)
+
+        expect(result.current.tree).toBe({...originalTree,items:[...originalTree.items,newNode]})
 
     })
     
