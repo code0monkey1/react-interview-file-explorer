@@ -33,7 +33,7 @@
         })
 
       ```
-1. Passing the `initialTreeData` into the hook and testing that if it is returned
+1. Passing the `initial data` into the hook and testing that if it is returned
     
    ``` javascript 
       it('gets the initial data',()=>{
