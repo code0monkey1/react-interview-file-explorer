@@ -23,7 +23,7 @@ const addNewNode = (id,newNode) =>{
 
       addNode(id,newNode,head);
 
-      return head;
+      setTree(head)
     
 }
 
