@@ -35,38 +35,39 @@
       ```
 1. Passing the `initial data` into the hook and testing that if it is returned
     
-   ``` javascript 
-      it('gets the initial data',()=>{
-      
-        const myJson={
-          file:"whatever",
-          folder:"whatever"
-        }
-        // the initial data to be sent into the useTree hook , is sent as the 
-        // second argument , as an object, `initialProps` holding the initial data
-        const {result} = renderHook(useTree,{initialProps:myJson})
+     ``` javascript 
+        it('gets the initial data',()=>{
         
-        console.log(result.current.tree)
-        
-        expect(result.current.tree).toBe(myJson)
-    })
-  ```
-1. Causing change is `state` using the `act` function .
+          const myJson={
+            file:"whatever",
+            folder:"whatever"
+          }
+          // the initial data to be sent into the useTree hook , is sent as the 
+          // second argument , as an object, `initialProps` holding the initial data
+          const {result} = renderHook(useTree,{initialProps:myJson})
+          
+          console.log(result.current.tree)
+          
+          expect(result.current.tree).toBe(myJson)
+      })
+    ```
+
+1. Causing change in the original `state` of the hook, using the `act` function .
    
 > Whenever you change the state of the hook using a function , you must wrap that function in `act`
 
-    ```javascript
+  ```javascript
 
         const {result} = renderHook(useTree,{initialProps:originalTree})
         
         
-          act(() => {
+        act(() => {
            // the addNewNode function causes a change in the state of the `original tree`, but calling `setTree` , which will cause a change in the state, hence it has to be wrapped in the `act` callback function block
 
             result.current.addNewNode("3",newNode)
-          })
+        })
  
-          expect(result.current.tree).toEqual(resultTree)
+        expect(result.current.tree).toEqual(resultTree)
 
-    ```
+   ```
  
