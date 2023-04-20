@@ -25,12 +25,16 @@ function App() {
             console.log(`id: ${id}, type: ${type}`);
             
            if(value){
-              addNewNode(id+'',{
+            
+            const newNode={
                 id:uuid(),
                 name: value,
                 type,
                 isFolder:(type==='folder')
-              })
+              }
+              console.log("The new node to be inserted is",JSON.stringify(newNode,null,2))
+              
+              addNewNode(id+'',newNode)
            }
           inputRef.current.value=''
         }
