@@ -30,6 +30,7 @@ const addNewNode = (id,newNode) =>{
 const addNode=(id,newNode,currentNode) =>{
        
       if(id === currentNode.id){
+          console.log("id is",id ," but current node is",JSON.stringify(currentNode,null,2))
           currentNode.items.push(newNode);
           return;
       }
