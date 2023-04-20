@@ -21,17 +21,19 @@ const getAddedTree = (id,newNode) =>{
       
       const head=JSON.parse(JSON.stringify(tree));
 
+      addNode(head)(id,newNode,head);
+
     
     
 }
 
-const addNode=(id,newNode,currentNode) =>{
+const addNode=(head)=>(id,newNode,currentNode) =>{
    
      if(id===currentNode.id){
            
           currentNode.items.push(newNode);
 
-          setTree()
+          setTree(head)
           
       }
 }
