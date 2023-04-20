@@ -11,14 +11,14 @@ const useTree=(treeData)=>{
     }, [treeData])
      
 /**
+ * @id : string eg:"2",
  * @newNode : { 
  *     id:string,
  *     name: string,
  *     isFolder: boolean
  *    }
- * @id : string eg:"2"
+ * 
  */
-
 const addNewNode = (id,newNode) =>{
       
       const head=JSON.parse(JSON.stringify(tree));

@@ -25,12 +25,12 @@ function App() {
             console.log(`id: ${id}, type: ${type}`);
             
            if(value){
-              addNewNode({
+              addNewNode(id,{
                 id:uuid(),
                 name: value,
                 type,
                 isFolder:(type==='folder')
-              },id)
+              })
            }
           inputRef.current.value=''
         }
