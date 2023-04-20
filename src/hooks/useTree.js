@@ -21,28 +21,23 @@ const addNewNode = (id,newNode) =>{
       
       const head=JSON.parse(JSON.stringify(tree));
 
-      addNode(head)(id,newNode,head);
+      addNode(id,newNode,head);
 
       return head;
     
 }
 
-const addNode=(head)=>(id,newNode,currentNode) =>{
-   
-     if(id===currentNode.id){
-           
+const addNode=(id,newNode,currentNode) =>{
+       
+      if(id === currentNode.id){
           currentNode.items.push(newNode);
-
-          setTree(head) 
-          return; 
+          return;
       }
 
-      for ( let node of currentNode.items)
-          addNode(head)(node.id,newNode,node)
-      
-     
-}
+      for ( const node of currentNode.items)
+          addNode(node.id,newNode,node)
 
+}
 
 const getToggledTree=(id)=>{
         
