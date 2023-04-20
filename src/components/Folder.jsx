@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import image from './folder.png';
 
 const styles = {
@@ -14,7 +14,9 @@ const styles = {
 };
 
 const Folder = ({data,inputRef}) => {
-  
+   
+  const[add,setAdd] = useState(null)
+
   return (
 <>
     <div  
@@ -27,12 +29,12 @@ const Folder = ({data,inputRef}) => {
       </div>
      
       <div style={styles.buttonContainer}>
-        <button data-id={data.id} name='file'>Add File</button>
-        <button data-id={data.id} name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
+        <button onClick={()=>{setAdd('file')}} data-id={data.id} name='file'>Add File</button>
+        <button onClick={()=>{setAdd('folder')}} data-id={data.id} name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
       </div>
     </div>
     <br/>
-     <div style={{marginLeft:"5rem",display:(inputRef.current?.value.name?'':"none")}}>
+     <div style={{marginLeft:"5rem",display:(add?'':"none")}}>
             <input ref={inputRef} type='text' placeholder={`name of the ${inputRef.current?.value.name}`}></input>
       </div>
   </>
