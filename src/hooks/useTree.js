@@ -11,7 +11,7 @@ const useTree=(treeData)=>{
     }, [treeData])
      
 
-const addNode = (node) =>{
+const addNode = (id,node) =>{
 
      
     
