@@ -35,8 +35,8 @@
       ```
 1. Passing the `initialTreeData` into the hook and testing that if it is returned
     
- ``` javascript 
-      it('gets the initial treeData',()=>{
+   ``` javascript 
+      it('gets the initial data',()=>{
       
         const myJson={
           file:"whatever",
@@ -50,4 +50,4 @@
         
         expect(result.current.tree).toBe(myJson)
     })
-    ```
+  ```
