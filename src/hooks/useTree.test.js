@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
+import folderData from '../data/folderData';
 import useTree from './useTree';
-
 describe('file-explorer',()=>{
     
 
@@ -11,16 +11,13 @@ describe('file-explorer',()=>{
 
     it('gets the initial treeData',()=>{
       
-        const myJson={
-          file:"whatever",
-          folder:"whatever"
-        }
-        const {result} = renderHook(useTree,{initialProps:myJson})
+        const myData=folderData
+        const {result} = renderHook(useTree,{initialProps:myData})
         
       
         console.log(result.current.tree)
         
-        expect(result.current.tree).toBe(myJson)
+        expect(result.current.tree).toBe(myData)
     })
 
     it('creates a new file if created',()=>{
