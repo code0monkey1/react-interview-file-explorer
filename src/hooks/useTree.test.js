@@ -43,10 +43,10 @@ describe('file-explorer',()=>{
         const {result} = renderHook(useTree,{initialProps:originalTree})
         
           console.log("previous",JSON.stringify(result.current.tree,null,2))
-        const newNode={id:"5",name:"newNote",isFolder:false,items:[]}
+          const newNode={id:"5",name:"newNote",isFolder:false,items:[]}
         
           act(() => {
-            result.current.addNewNode("2",newNode)
+            result.current.addNewNode("1",newNode)
           })
 
           console.log("current",JSON.stringify(result.current.tree,null,2))
