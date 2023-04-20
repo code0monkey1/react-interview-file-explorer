@@ -16,7 +16,7 @@ const styles = {
 const Folder = ({data}) => {
   
   const[fileType,setFileType]=useState(null)
- const inputRef = useRef(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -37,8 +37,8 @@ const Folder = ({data}) => {
   return (
 <>
     <div  
-     style={styles.container} 
-     onClick={({target:{name}}) => {setFileType(name)}}>
+      style={styles.container} 
+      onClick={({target:{name}}) => {setFileType(name)}}>
       
       <div style={styles.buttonContainer}>
         <img id={data.id} src={image} alt="folder" width={60} height={60} />
@@ -46,14 +46,14 @@ const Folder = ({data}) => {
       </div>
      
       <div style={styles.buttonContainer}>
-        <button data-id={data.id} name='add-file'>Add File</button>
-        <button data-id={data.id} name='add-folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
+        <button data-id={data.id} name='file'>Add File</button>
+        <button data-id={data.id} name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
       </div>
     </div>
     <br/>
-     <form style={{marginLeft:"3.2rem",display:(fileType?'':"none")}}>
+     <div style={{marginLeft:"5rem",display:(fileType?'':"none")}}>
             <input ref={inputRef} type='text' placeholder={`name of the ${fileType}`}></input>
-      </form>
+      </div>
   </>
   )
 }

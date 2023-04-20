@@ -17,7 +17,7 @@ function App() {
 
       return( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
         {parent.isFolder? <> 
-              <Folder  data={parent} />
+              <Folder  data={parent}  />
               {
                 parent.open?parent.items.map(item=> getRenderedTree(item,newMargin)):''
               }
