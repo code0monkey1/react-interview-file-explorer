@@ -27,7 +27,7 @@ function App() {
                 name: value,
                 type,
                 isFolder:(type==='folder')
-              })
+              },id)
            }
           inputRef.current.value=''
         }
