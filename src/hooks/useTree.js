@@ -33,9 +33,10 @@ const addNode=(id,newNode,currentNode) =>{
           currentNode.items.push(newNode);
           return;
       }
-
+      
       for ( const node of currentNode.items)
           addNode(node.id,newNode,node)
+      
 
 }
 
