@@ -33,3 +33,20 @@
         })
 
       ```
+1. Passing the `initialTreeData` into the hook and testing that if it is returned
+    
+ ``` javascript 
+      it('gets the initial treeData',()=>{
+      
+        const myJson={
+          file:"whatever",
+          folder:"whatever"
+        }
+        const {result} = renderHook(useTree,{initialProps:myJson})
+        
+      
+        console.log(result.current.tree)
+        
+        expect(result.current.tree).toBe(myJson)
+    })
+    ```
