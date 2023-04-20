@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import folderData from '../data/folderData';
 import useTree from './useTree';
 describe('file-explorer',()=>{
@@ -43,9 +43,11 @@ describe('file-explorer',()=>{
         const {result} = renderHook(useTree,{initialProps:originalTree})
 
         const newNode={id:"5",name:"newNote",isFolder:false,items:[]}
-
-        result.current.addNewNode("2",newNode)
-
+        
+          act(() => {
+            result.current.addNewNode(2,newNode)
+          })
+ 
         expect(result.current.tree).toBe({...originalTree,items:[...originalTree.items,newNode]})
 
     })
