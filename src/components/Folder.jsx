@@ -17,13 +17,13 @@ const styles = {
 const Folder = ({data,inputRef}) => {
    
   const[type,setType] = useState(null)
-
+  const[toggle,setToggle] = useState(false)
 
     useEffect(() => {
 
       const handleClickOutside = (event) => {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
-           setType(null)
+          setToggle(toggle=>!toggle)
         }
       };
 
@@ -33,7 +33,7 @@ const Folder = ({data,inputRef}) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
 
-  }, [type]);
+  }, [inputRef]);
   
  console.log("The type is set to "+type)
   return (
@@ -53,7 +53,7 @@ const Folder = ({data,inputRef}) => {
       </div>
     </div>
     <br/>
-     <div style={{marginLeft:"5rem",display:(type?'':"none")}}>
+     <div style={{marginLeft:"5rem",display:(toggle?'':"none")}}>
              <img src={type==="file"?file:folder} alt="folder" width={60} height={60} />
              <input ref={inputRef} data-id={data.id} data-type={type} type='text' placeholder={`name of the ${type}`}></input>
       </div>
