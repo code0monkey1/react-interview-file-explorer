@@ -11,8 +11,6 @@ function App() {
 
     const{tree:data,getToggledTree,setTree,addNewNode} =  useTree(treeData)
     const inputRef = useRef(null);
-    const [type,setType]=useState('')
-
 
     useEffect(() => {
       const handleClickOutside = (event) => {
@@ -23,6 +21,7 @@ function App() {
 
             const id = inputRef.current.getAttribute('data-id');
             const type = inputRef.current.getAttribute('data-type');
+
             console.log(`id: ${id}, type: ${type}`);
             
            if(value){
