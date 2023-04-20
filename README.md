@@ -61,6 +61,8 @@
         
         
           act(() => {
+           // the addNewNode function causes a change in the state of the `original tree`, but calling `setTree` , which will cause a change in the state, hence it has to be wrapped in the `act` callback function block
+
             result.current.addNewNode("3",newNode)
           })
  
