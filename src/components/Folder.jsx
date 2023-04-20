@@ -45,8 +45,8 @@ const Folder = ({data,inputRef}) => {
       </div>
      
       <div style={styles.buttonContainer}>
-        <button onClick={()=>{setType('file')}} data-id={data.id} name='file'>Add File</button>
-        <button onClick={()=>{setType('folder')}} data-id={data.id} name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
+        <button onClick={()=>{setType('file')}} data-id={data.id} data-name='file' name='file'>Add File</button>
+        <button onClick={()=>{setType('folder')}} data-id={data.id} data-name="folder" name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
       </div>
     </div>
     <br/>
