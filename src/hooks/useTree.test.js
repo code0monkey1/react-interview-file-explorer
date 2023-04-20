@@ -9,14 +9,15 @@ describe('file-explorer',()=>{
       expect(result.current.tree).toEqual(undefined)
     })
 
-    it('gets the initial tree',()=>{
+    it('gets the initial treeData',()=>{
+      
         const myJson={
           file:"whatever",
           folder:"whatever"
         }
         const {result} = renderHook(useTree,{initialProps:myJson})
         
-        /* eslint-disable */
+      
         console.log(result.current.tree)
         
         expect(result.current.tree).toBe(myJson)
