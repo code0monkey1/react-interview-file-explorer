@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import image from './folder.png';
+import file from './file.png';
+import folder from './folder.png';
 
 const styles = {
   container: {
@@ -39,7 +40,7 @@ const Folder = ({data,inputRef}) => {
      >
       
       <div style={styles.buttonContainer}>
-        <img id={data.id} src={image} alt="folder" width={60} height={60} />
+        <img id={data.id} src={folder} alt="folder" width={60} height={60} />
         <div style={{ paddingTop: '1rem' }} >{data.name}</div>
       </div>
      
