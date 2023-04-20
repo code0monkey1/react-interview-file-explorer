@@ -30,7 +30,13 @@ function App() {
   
 
   return (
-    <div onClick={({target})=>{setTree(getToggledTree(target.id))}} style={{margin:"4rem"}}>
+    <div onClick={({target})=>{
+        
+      console.log("name is",target.name)
+
+      setTree(getToggledTree(target.id))
+      
+      }} style={{margin:"4rem"}}>
       {
           getRenderedTree(data)
       } 

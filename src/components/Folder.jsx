@@ -46,8 +46,8 @@ const Folder = ({data}) => {
       </div>
      
       <div style={styles.buttonContainer}>
-        <button  name='file'>Add File</button>
-        <button name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
+        <button  name='add-file'>Add File</button>
+        <button name='add-folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
       </div>
     </div>
     <br/>
