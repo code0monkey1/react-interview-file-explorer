@@ -17,6 +17,9 @@ function App() {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
           console.log('Clicked outside');
            const value = inputRef.current.value.trim()
+           if(value){
+            
+           }
           inputRef.current.value=''
         }
       };
