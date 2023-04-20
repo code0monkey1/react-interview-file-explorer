@@ -22,11 +22,12 @@ function App() {
            const value = inputRef.current.value.trim()
            console.log("The value is ",value)
            if(value){
-              // addNewNode({
-              //   id:uuid(),
-              //   name: value,
-              //   isFolder:inputRef.current.
-              // })
+              addNewNode({
+                id:uuid(),
+                name: value,
+                type,
+                isFolder:(type==='folder')
+              })
            }
           inputRef.current.value=''
         }
