@@ -2,8 +2,7 @@ import { renderHook } from '@testing-library/react';
 import folderData from '../data/folderData';
 import useTree from './useTree';
 describe('file-explorer',()=>{
-    
-
+   
     it('first-test',()=>{
       const {result} = renderHook(useTree)
       expect(result.current.tree).toEqual(undefined)
@@ -21,6 +20,8 @@ describe('file-explorer',()=>{
 
     it('creates a new file/folder in the tree', ()=>{
         const newTree = JSON.parse(JSON.stringify(folderData))
+
+        const {result} = renderHook
     })
     
 })
