@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import image from './folder.png';
 
 const styles = {
@@ -16,6 +16,18 @@ const styles = {
 const Folder = ({data,inputRef}) => {
    
   const[type,setType] = useState(null)
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+          setType(null)
+      };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [type]);
 
   return (
 <>
