@@ -31,9 +31,12 @@ function App() {
 
   return (
     <div onClick={({target})=>{
-        
-      console.log("name is",target.name)
-      console.log("id is",target.id)
+         
+      if(target.name === 'add-file' || target.name === 'add-folder'){
+        addNewNode({id:target.id,name:"new-node",isFolder:true,items:[]})
+        return;
+      }
+   
       setTree(getToggledTree(target.id))
       
       }} style={{margin:"4rem"}}>
