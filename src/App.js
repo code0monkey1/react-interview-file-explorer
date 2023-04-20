@@ -11,7 +11,6 @@ function App() {
 
     const{tree:data,getToggledTree,setTree,addNewNode} =  useTree(treeData)
     const inputRef = useRef(null);
-    const [id,setId] = useState(null)
     const [type,setType]=useState('')
 
 
@@ -23,8 +22,8 @@ function App() {
            console.log("The value is ",value)
 
             const id = inputRef.current.getAttribute('data-id');
-            const name = inputRef.current.getAttribute('data-name');
-            console.log(`id: ${id}, name: ${name}`);
+            const type = inputRef.current.getAttribute('data-type');
+            console.log(`id: ${id}, type: ${type}`);
             
            if(value){
               addNewNode({
