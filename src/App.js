@@ -74,6 +74,7 @@ function App() {
    
      }
 
+  console.log("The current state is",JSON.stringify(data,null,2))
   return (
     <div onClick={handleClick} style={{margin:"4rem"}}>
       {
