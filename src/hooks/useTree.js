@@ -11,9 +11,12 @@ const useTree=(treeData)=>{
     }, [treeData])
      
 
-const addNode = (id,node) =>{
+const addNode = (id,newNode,currentNote) =>{
 
-     
+      if(id===currentNote.id){
+          
+          
+      }
     
 }
 const getToggledTree=(id)=>{
