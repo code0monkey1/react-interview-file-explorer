@@ -15,7 +15,7 @@ describe('first',()=>{
           folder:"whatever"
         }
 
-        const {result} = renderHook(useTree,myJson)
+        const {result} = renderHook(useTree,{tree:myJson})
 
         expect(result.current.tree).toBe(myJson)
     })
