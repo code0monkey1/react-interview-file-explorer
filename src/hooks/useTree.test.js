@@ -40,18 +40,40 @@ describe('file-explorer',()=>{
           }
         ]
         }
+
+         const newNode={id:"5",name:"newNote",isFolder:false,items:[]}
+
+        let resultTree={ 
+          id:"1",
+          name: "root",
+          isFolder: true,
+          items: [{
+
+          id:"2",
+          name: "root",
+          isFolder: true,
+          items:[]
+          }
+          ,{
+          id:"3",
+          name: "root",
+          isFolder: true,
+           items:[newNode]
+          }
+        ]
+        }
         const {result} = renderHook(useTree,{initialProps:originalTree})
         
           console.log("previous",JSON.stringify(result.current.tree,null,2))
-          const newNode={id:"5",name:"newNote",isFolder:false,items:[]}
+         
         
           act(() => {
-            result.current.addNewNode("1",newNode)
+            result.current.addNewNode("3",newNode)
           })
 
           console.log("current",JSON.stringify(result.current.tree,null,2))
  
-          expect(result.current.tree).toBe({...originalTree,items:[...originalTree.items,newNode]})
+          expect(result.current.tree).toBe(resultTree)
 
     })
     
