@@ -23,7 +23,7 @@ const getAddedTree = (id,newNode) =>{
 
       addNode(head)(id,newNode,head);
 
-    
+      return head;
     
 }
 
@@ -33,9 +33,14 @@ const addNode=(head)=>(id,newNode,currentNode) =>{
            
           currentNode.items.push(newNode);
 
-          setTree(head)
-          
+          setTree(head) 
+          return; 
       }
+
+      for ( let node of currentNode.items)
+          addNode(head)(node.id,newNode,node)
+      
+     
 }
 
 
