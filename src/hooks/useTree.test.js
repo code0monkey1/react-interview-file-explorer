@@ -21,7 +21,8 @@ describe('file-explorer',()=>{
     it('creates a new file/folder in the tree', ()=>{
         const newTree = JSON.parse(JSON.stringify(folderData))
 
-        const {result} = renderHook
+        const {result} = renderHook(useTree,{initialProps:folderData})
+
     })
     
 })

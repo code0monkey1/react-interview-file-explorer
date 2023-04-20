@@ -56,7 +56,8 @@ function closeItems(items){
  return{
   getToggledTree,
   tree,
-  setTree
+  setTree,
+  addNode
  }
 
 }
