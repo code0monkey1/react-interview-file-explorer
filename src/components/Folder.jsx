@@ -16,7 +16,7 @@ const styles = {
 
 const Folder = ({data,inputRef}) => {
    
-  const[type,setType] = useState(null)
+  const[type,setType] = useState('folder')
 
 
     useEffect(() => {
