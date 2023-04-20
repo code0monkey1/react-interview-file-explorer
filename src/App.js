@@ -33,7 +33,7 @@ function App() {
     <div onClick={({target})=>{
         
       console.log("name is",target.name)
-
+      console.log("id is",target.id)
       setTree(getToggledTree(target.id))
       
       }} style={{margin:"4rem"}}>
