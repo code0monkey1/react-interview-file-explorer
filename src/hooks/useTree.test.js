@@ -20,8 +20,29 @@ describe('file-explorer',()=>{
 
     it('creates a new file/folder in the tree', ()=>{
         const newTree = JSON.parse(JSON.stringify(folderData))
+        
+        let originalTree ={
+          id:"1",
+          name: "root",
+          isFolder: true,
+          items: [{
 
+          id:"2",
+          name: "root",
+          isFolder: true,
+          items:[]
+          }
+          ,{
+            id:"2",
+          name: "root",
+          isFolder: true,
+           items:[]
+          }
+        ]
+        }
         const {result} = renderHook(useTree,{initialProps:folderData})
+
+        result.current.addNode()
 
     })
     
