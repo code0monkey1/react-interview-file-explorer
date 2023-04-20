@@ -53,4 +53,6 @@
   ```
 1. Causing change is `state` using the `act` function .
    
-  > Whenever you change the state of the hook using a function , you must wrap that function in `act`
+> Whenever you change the state of the hook using a function , you must wrap that function in `act`
+
+  
