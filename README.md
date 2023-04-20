@@ -56,18 +56,19 @@
    
 > Whenever you change the state of the hook using a function , you must wrap that function in `act`
 
-  ```javascript
-
-        const {result} = renderHook(useTree,{initialProps:originalTree})
-        
-        
-        act(() => {
-           // the addNewNode function causes a change in the state of the `original tree`, but calling `setTree` , which will cause a change in the state, hence it has to be wrapped in the `act` callback function block
-
-            result.current.addNewNode("3",newNode)
-        })
- 
-        expect(result.current.tree).toEqual(resultTree)
-
-   ```
+    ```javascript
+          const {result} = renderHook(useTree,{initialProps:originalTree})
+          
+          
+          act(() => {
+             // the addNewNode function causes a change in the state of the
+            // `original tree`, but calling `setTree` , which will cause a change in 
+            //the state, hence it has to be wrapped in the `act` callback function block
+  
+              result.current.addNewNode("3",newNode)
+          })
+   
+          expect(result.current.tree).toEqual(resultTree)
+  
+     ```
  
