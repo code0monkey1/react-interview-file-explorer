@@ -10,7 +10,13 @@ const useTree=(treeData)=>{
        setTree(treeData)
     }, [treeData])
      
-
+/**
+ * @newNode : { 
+ *     id:"2",
+ *         name: "root",
+ *        isFolder: true
+ *    }
+ */
 const addNode = (id,newNode,currentNote) =>{
 
       if(id===currentNote.id){
