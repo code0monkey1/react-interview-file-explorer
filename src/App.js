@@ -51,19 +51,24 @@ function App() {
       </div>)
     }
   
-
-  return (
-    <div onClick={({target})=>{
+  const handleClick=({target})=>{
          
-      if(target.name === 'add-file' || target.name === 'add-folder'){
+       
+      if(target.name === 'file' || target.name === 'folder'){
         console.log("the identity `id` is ",target.dataset.id)
         addNewNode({id:target.dataset.id,name:"new-node",isFolder:true,items:[]})
         return;
       }
+      else{
+          
+        setTree(getToggledTree(target.id))
+        
+      }
    
-      setTree(getToggledTree(target.id))
-      
-      }} style={{margin:"4rem"}}>
+     }
+
+  return (
+    <div onClick={handleClick} style={{margin:"4rem"}}>
       {
           getRenderedTree(data)
       } 
