@@ -33,7 +33,7 @@ const Folder = ({data,inputRef}) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
 
-  }, [inputRef]);
+  }, [type]);
   
  console.log("The type is set to "+type)
   return (
