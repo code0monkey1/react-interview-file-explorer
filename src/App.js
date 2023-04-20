@@ -16,7 +16,7 @@ function App() {
       const handleClickOutside = (event) => {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
           console.log('Clicked outside');
-          console.log("The input value is ",inputRef.current.value)
+          console.log("The input value is ",inputRef.current)
           inputRef.current.value=''
         }
       };
