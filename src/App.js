@@ -9,17 +9,17 @@ function App() {
 
     const{tree:data,getToggledTree,setTree} =  useTree(treeData)
 
-    const getRenderedTree =(parent,marginLeft=2)=>{
+    const getRenderedTree =(parent,marginLeft=1)=>{
       
       if(!parent)return;
 
-      const newMargin=marginLeft+1
+      const newMargin=++marginLeft
 
       return( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
         {parent.isFolder? <> 
               <Folder  data={parent}/>
               {
-                parent.open?parent.items.map(item=> getRenderedTree(item)):''
+                parent.open?parent.items.map(item=> getRenderedTree(item,newMargin)):''
               }
             </>
             : 
