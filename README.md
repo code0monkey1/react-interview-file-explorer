@@ -15,4 +15,4 @@
 
 ### Testing a react hook ( testing useTree)
 
-1. Install 
+1. Use the `renderHook` from `import { renderHook } from '@testing-library/react'`
