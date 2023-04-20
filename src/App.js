@@ -1,4 +1,5 @@
 
+import { useEffect, useRef } from 'react';
 import './App.css';
 import File from './components/File.jsx';
 import Folder from './components/Folder.jsx';
@@ -8,6 +9,24 @@ import useTree from './hooks/useTree';
 function App() {
 
     const{tree:data,getToggledTree,setTree,addNewNode} =  useTree(treeData)
+    const inputRef = useRef(null);
+
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (inputRef.current && !inputRef.current.contains(event.target)) {
+          console.log('Clicked outside');
+          inputRef.current.value=''
+        }
+      };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [inputRef]);
+
 
     const getRenderedTree =(parent,marginLeft=1)=>{
       
@@ -17,7 +36,7 @@ function App() {
 
       return( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
         {parent.isFolder? <> 
-              <Folder  data={parent}  />
+              <Folder  data={parent} inputRef={inputRef} />
               {
                 parent.open?parent.items.map(item=> getRenderedTree(item,newMargin)):''
               }
