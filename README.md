@@ -55,4 +55,16 @@
    
 > Whenever you change the state of the hook using a function , you must wrap that function in `act`
 
-  
+    ```javascript
+
+        const {result} = renderHook(useTree,{initialProps:originalTree})
+        
+        
+          act(() => {
+            result.current.addNewNode("3",newNode)
+          })
+ 
+          expect(result.current.tree).toEqual(resultTree)
+
+    ```
+ 
