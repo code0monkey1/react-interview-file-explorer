@@ -30,7 +30,8 @@ function App() {
                 id:uuid(),
                 name: value,
                 type,
-                isFolder:(type==='folder')
+                isFolder:(type==='folder'),
+                items:[]
               }
               console.log("The new node to be inserted is",JSON.stringify(newNode,null,2))
               
