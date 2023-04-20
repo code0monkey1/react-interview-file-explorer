@@ -54,9 +54,10 @@
 
 1. Causing change in the original `state` of the hook, using the `act` function .
    
-> Whenever you change the state of the hook using a function , you must wrap that function in `act`
+> Whenever you change the original state in the hook using a function , you must wrap that function in `act`
 
-    ```javascript
+  ```javascript
+          
           const {result} = renderHook(useTree,{initialProps:originalTree})
           
           
@@ -69,6 +70,5 @@
           })
    
           expect(result.current.tree).toEqual(resultTree)
-  
-     ```
+  ```
  
