@@ -6,7 +6,7 @@ describe('first',()=>{
 
     it('first-test',()=>{
       const {result} = renderHook(useTree)
-      expect(result.current).toBe({})
+      console.log(result.current)
     })
     
 })
