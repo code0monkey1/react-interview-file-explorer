@@ -33,7 +33,7 @@ describe('file-explorer',()=>{
           items:[]
           }
           ,{
-            id:"2",
+          id:"3",
           name: "root",
           isFolder: true,
            items:[]
@@ -51,7 +51,7 @@ describe('file-explorer',()=>{
 
           console.log("current",JSON.stringify(result.current.tree,null,2))
  
-        expect(result.current.tree).toBe({...originalTree,items:[...originalTree.items,newNode]})
+          expect(result.current.tree).toBe({...originalTree,items:[...originalTree.items,newNode]})
 
     })
     
