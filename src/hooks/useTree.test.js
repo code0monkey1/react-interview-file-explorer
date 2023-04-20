@@ -44,7 +44,7 @@ describe('file-explorer',()=>{
 
         const newNode={id:"5",name:"newNote",isFolder:false,items:[]}
 
-        result.current.addNode(2,newNode,originalTree)
+        result.current.addNewNode("2",newNode)
 
         expect(result.current.tree).toBe({...originalTree,items:[...originalTree.items,newNode]})
 

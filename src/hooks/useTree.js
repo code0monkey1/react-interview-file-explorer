@@ -17,7 +17,7 @@ const useTree=(treeData)=>{
  *        isFolder: true
  *    }
  */
-const getAddedTree = (id,newNode) =>{
+const addNewNode = (id,newNode) =>{
       
       const head=JSON.parse(JSON.stringify(tree));
 
@@ -82,7 +82,7 @@ function closeItems(items){
   getToggledTree,
   tree,
   setTree,
-  addNode
+  addNewNode
  }
 
 }
