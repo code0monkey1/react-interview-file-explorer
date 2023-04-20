@@ -15,8 +15,10 @@ describe('first',()=>{
           folder:"whatever"
         }
 
-        const {result} = renderHook(useTree,{tree:myJson})
-
+        const {result} = renderHook(useTree,{initialProps:{tree:myJson}})
+        /* eslint-disable */
+        console.log(result.current.tree)
+        
         expect(result.current.tree).toBe(myJson)
     })
     
