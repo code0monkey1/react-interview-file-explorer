@@ -41,12 +41,15 @@ describe('file-explorer',()=>{
         ]
         }
         const {result} = renderHook(useTree,{initialProps:originalTree})
-
+        
+          console.log("previous",JSON.stringify(result.current.tree,null,2))
         const newNode={id:"5",name:"newNote",isFolder:false,items:[]}
         
           act(() => {
             result.current.addNewNode(2,newNode)
           })
+
+          console.log("current",JSON.stringify(result.current.tree,null,2))
  
         expect(result.current.tree).toBe({...originalTree,items:[...originalTree.items,newNode]})
 
