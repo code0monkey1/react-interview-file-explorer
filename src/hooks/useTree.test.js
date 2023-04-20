@@ -46,7 +46,7 @@ describe('file-explorer',()=>{
         const newNode={id:"5",name:"newNote",isFolder:false,items:[]}
         
           act(() => {
-            result.current.addNewNode(2,newNode)
+            result.current.addNewNode("2",newNode)
           })
 
           console.log("current",JSON.stringify(result.current.tree,null,2))
