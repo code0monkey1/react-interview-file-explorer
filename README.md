@@ -42,9 +42,10 @@
           file:"whatever",
           folder:"whatever"
         }
+        // the initial data to be sent into the useTree hook , is sent as the 
+        // second argument , as an object, `initialProps` holding the initial data
         const {result} = renderHook(useTree,{initialProps:myJson})
         
-      
         console.log(result.current.tree)
         
         expect(result.current.tree).toBe(myJson)
