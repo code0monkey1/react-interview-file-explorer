@@ -7,7 +7,7 @@ import useTree from './hooks/useTree';
 
 function App() {
 
-    const{tree:data,getToggledTree,setTree} =  useTree(treeData)
+    const{tree:data,getToggledTree,setTree,addNewNode} =  useTree(treeData)
 
     const getRenderedTree =(parent,marginLeft=1)=>{
       
@@ -17,7 +17,7 @@ function App() {
 
       return( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
         {parent.isFolder? <> 
-              <Folder  data={parent}/>
+              <Folder  data={parent} />
               {
                 parent.open?parent.items.map(item=> getRenderedTree(item,newMargin)):''
               }
