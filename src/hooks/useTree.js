@@ -21,7 +21,7 @@ const addNode = (id,newNode,currentNote) =>{
 
       if(id===currentNote.id){
           
-         
+           
       }
     
 }
