@@ -30,13 +30,13 @@ const addNewNode = (id,newNode) =>{
 const addNode=(id,newNode,currentNode) =>{
        
       if(id === currentNode.id){
-          console.log("id is",id ," but current node is",JSON.stringify(currentNode,null,2))
+         
           currentNode.items.push(newNode);
           return;
       }
       
       for ( const node of currentNode.items)
-          addNode(node.id,newNode,node)
+          addNode(id,newNode,node)
       
 
 }
@@ -51,7 +51,7 @@ const getToggledTree=(id)=>{
   }
 
 function toggleItem(head,id){
-             console.log("The id is: ",id)
+      
             if(head.isFolder && head.id===id) {
                  head.open=!head.open;
               

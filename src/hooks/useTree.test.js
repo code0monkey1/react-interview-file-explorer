@@ -64,16 +64,12 @@ describe('file-explorer',()=>{
         }
         const {result} = renderHook(useTree,{initialProps:originalTree})
         
-          console.log("previous",JSON.stringify(result.current.tree,null,2))
-         
         
           act(() => {
             result.current.addNewNode("3",newNode)
           })
-
-          console.log("current",JSON.stringify(result.current.tree,null,2))
  
-          expect(result.current.tree).toBe(resultTree)
+          expect(result.current.tree).toEqual(resultTree)
 
     })
     
