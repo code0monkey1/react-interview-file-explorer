@@ -19,7 +19,7 @@ describe('file-explorer',()=>{
         expect(result.current.tree).toBe(myData)
     })
 
-    it('creates a new file if created',()=>{
+    it('creates a new file/folder in the tree', ()=>{
       
     })
     
