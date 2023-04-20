@@ -51,3 +51,6 @@
         expect(result.current.tree).toBe(myJson)
     })
   ```
+1. Causing change is `state` using the `act` function .
+   
+      > Whenever you change the 
