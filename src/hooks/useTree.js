@@ -8,10 +8,12 @@ const useTree=(treeData)=>{
      useEffect(() => {
      
        setTree(treeData)
-    }, [])
+    }, [treeData])
      
 
 const addNode = (node) =>{
+
+     
     
 }
 const getToggledTree=(id)=>{

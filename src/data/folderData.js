@@ -1,15 +1,4 @@
-// function generateExplorer(id, depth, maxDepth) {
-//   const isFolder = depth < maxDepth;
-//   const items = isFolder ? Array.from({ length: Math.floor(Math.random() * 4) + 1 }, (_, i) => generateExplorer(`${id}-${i}`, depth + 1, maxDepth)) : [];
-//   return {
-//     id,
-//     name: `Item ${id}`,
-//     isFolder,
-//     items,
-//   };
-// }
 
-// const data = generateExplorer('1', 1, 10);
 const data = {
   id:"1",
   name: "root",
