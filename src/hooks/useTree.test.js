@@ -1,10 +1,11 @@
 import { render } from '@testing-library/react';
-// import { useTree } from './useTree';
+import { useTree } from './useTree';
 
+describe('first',()=>{
+    
 
-describe('useTree', () => {
-
-    if('passes the test',()=>{
-      expect(true).toBe(true);
+    it('first-test',()=>{
+      expect(true).toBe(true)
     })
+    
 })
