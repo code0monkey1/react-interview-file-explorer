@@ -17,14 +17,26 @@ const useTree=(treeData)=>{
  *        isFolder: true
  *    }
  */
-const addNode = (id,newNode,currentNote) =>{
+const getAddedTree = (id,newNode) =>{
+      
+      const head=JSON.parse(JSON.stringify(tree));
 
-      if(id===currentNote.id){
-          
-           
-      }
+    
     
 }
+
+const addNode=(id,newNode,currentNode) =>{
+   
+     if(id===currentNode.id){
+           
+          currentNode.items.push(newNode);
+
+          setTree()
+          
+      }
+}
+
+
 const getToggledTree=(id)=>{
         
           const head=JSON.parse(JSON.stringify(tree));
