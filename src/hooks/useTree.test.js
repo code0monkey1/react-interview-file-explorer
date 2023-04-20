@@ -1,7 +1,7 @@
 // useTree.test.js
 import { renderHook } from '@testing-library/react-hooks';
 
-import { fireEvent, render, screen } from '@testing-library/react';
+import { createRoot, fireEvent, screen } from '@testing-library/react';
 import App from '../App';
 import useTree from './useTree';
 
@@ -13,7 +13,7 @@ describe('useTree', () => {
   });
 
   test('renders root node correctly', () => {
-    render(<App />);
+    createRoot(<App />);
     const rootNode = screen.getByText(/root/i);
     expect(rootNode).toBeInTheDocument();
   });
@@ -47,7 +47,7 @@ describe('useTree', () => {
         { id: 'file1', name: 'File 1', isFolder: false },
       ],
     };
-    render(<App />);
+    createRoot(<App />);
     const folderNode = screen.getByText(/folder 1/i);
     fireEvent.click(folderNode);
     const fileNode = screen.getByText(/file 1/i);
@@ -55,7 +55,7 @@ describe('useTree', () => {
   });
 
   test('closes folder input correctly', () => {
-    render(<App />);
+    createRoot(<App />);
     const folderNode = screen.getByText(/folder 1/i);
     fireEvent.click(folderNode);
     const inputNode = screen.getByPlaceholderText(/file type/i);
