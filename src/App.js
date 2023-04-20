@@ -64,7 +64,7 @@ function App() {
        
       if(target.name === 'file' || target.name === 'folder'){
         console.log("the identity `id` is ",target.dataset.id)
-        console.log("the type `type` is ",target.current.type)
+        console.log("the type `name` is ",target.current.name)
         setId(target.dataset.id)
         return;
       }
