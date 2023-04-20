@@ -25,7 +25,7 @@ function App() {
             console.log(`id: ${id}, type: ${type}`);
             
            if(value){
-              addNewNode(id,{
+              addNewNode(id+'',{
                 id:uuid(),
                 name: value,
                 type,
