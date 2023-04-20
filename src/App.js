@@ -1,5 +1,6 @@
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import './App.css';
 import File from './components/File.jsx';
 import Folder from './components/Folder.jsx';
@@ -10,6 +11,8 @@ function App() {
 
     const{tree:data,getToggledTree,setTree,addNewNode} =  useTree(treeData)
     const inputRef = useRef(null);
+    const [id,setId] = useState(null)
+    const [type,setType]=useState('')
 
 
     useEffect(() => {
@@ -19,7 +22,11 @@ function App() {
            const value = inputRef.current.value.trim()
            console.log("The value is ",value)
            if(value){
-            
+              // addNewNode({
+              //   id:uuid(),
+              //   name: value,
+              //   isFolder:inputRef.current.
+              // })
            }
           inputRef.current.value=''
         }
@@ -57,7 +64,8 @@ function App() {
        
       if(target.name === 'file' || target.name === 'folder'){
         console.log("the identity `id` is ",target.dataset.id)
-        addNewNode({id:target.dataset.id,name:"new-node",isFolder:true,items:[]})
+        console.log("the type `type` is ",target.current.type)
+        setId(target.dataset.id)
         return;
       }
       else{
