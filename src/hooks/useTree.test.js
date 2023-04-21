@@ -86,7 +86,7 @@ describe('file-explorer',()=>{
           result.current.toggleOpen("1")
         })   
         
-        expect(result.current.tree).toMatchObject({...headNode,open:true})
+        expect(JSON.stringify(result.current.tree)).toEqual(JSON.stringify({...headNode,open:true}))
     })
     
 })
