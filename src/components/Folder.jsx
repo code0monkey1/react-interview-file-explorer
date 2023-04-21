@@ -23,7 +23,7 @@ const Folder = ({data,inputRef}) => {
 
       const handleClickOutside = (event) => {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
-          setToggle(toggle=>!toggle)
+          setToggle(!toggle)
         }
       };
 
