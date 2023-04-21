@@ -19,21 +19,21 @@ const Folder = ({data,inputRef}) => {
   const[type,setType] = useState(null)
   const[toggle,setToggle] = useState(false)
 
-  //   useEffect(() => {
+    useEffect(() => {
 
-  //     const handleClickOutside = (event) => {
-  //       if (inputRef.current && !inputRef.current.contains(event.target)) {
-  //         setToggle(!toggle)
-  //       }
-  //     };
+      const handleClickOutside = (event) => {
+        if (inputRef.current && !inputRef.current.contains(event.target)) {
+          setToggle(!toggle)
+        }
+      };
 
-  //   document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
 
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside);
-  //   };
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
 
-  // }, [inputRef,type]);
+  }, []);
 
   return (
 <>
