@@ -15,29 +15,29 @@ function App() {
     useEffect(() => {
       const handleClickOutside = (event) => {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
-        //   console.log('Clicked outside');
-        //    const value = inputRef.current.value.trim()
-        //    console.log("The value is ",value)
+          console.log('Clicked outside');
+           const value = inputRef.current.value.trim()
+           console.log("The value is ",value)
 
-        //     const id = inputRef.current.getAttribute('data-id');
-        //     const type = inputRef.current.getAttribute('data-type');
+            const id = inputRef.current.getAttribute('data-id');
+            const type = inputRef.current.getAttribute('data-type');
 
-        //     console.log(`id: ${id}, type: ${type}`);
+            console.log(`id: ${id}, type: ${type}`);
             
-          //  if(value){
+           if(value){
             
-          //   const newNode={
-          //       id:uuid(),
-          //       name: value,
-          //       type,
-          //       isFolder:(type==='folder'),
-          //       items:[]
-          //     }
-          //     console.log("The new node to be inserted is",JSON.stringify(newNode,null,2))
+            const newNode={
+                id:uuid(),
+                name: value,
+                type,
+                isFolder:(type==='folder'),
+                items:[]
+              }
+              console.log("The new node to be inserted is",JSON.stringify(newNode,null,2))
               
-          //     addNewNode(id+'',newNode)
-          //  }
-          // inputRef.current.value=''
+              addNewNode(id+'',newNode)
+           }
+          inputRef.current.value=''
         }
       };
 
@@ -46,7 +46,7 @@ function App() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [inputRef,addNewNode]);
 
 
     const getRenderedTree =(parent,marginLeft=1)=>{
