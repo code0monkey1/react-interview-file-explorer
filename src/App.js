@@ -69,9 +69,8 @@ function App() {
       </div>)
     }
   
-
-
   console.log("The current state is",JSON.stringify(data,null,2))
+  
   return (
     <div onClick={({target})=> {setTree(getToggledTree(target.id))}} style={{margin:"4rem"}}>
       {
