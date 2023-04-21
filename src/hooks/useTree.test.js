@@ -78,7 +78,6 @@ describe('file-explorer',()=>{
                          name: "root",
                         isFolder: true,
                         items:[],
-                        open:false,
                        }
 
         const {result} = renderHook(useTree,{initialProps:headNode})
@@ -87,7 +86,7 @@ describe('file-explorer',()=>{
           result.current.toggleOpen("1")
         })   
         
-        expect(result.current.tree).toEqual({...headNode,open:!headNode.open})
+        expect(result.current.tree).toEqual({...headNode,open:true})
     })
     
 })
