@@ -15,14 +15,14 @@ function App() {
     useEffect(() => {
       const handleClickOutside = (event) => {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
-          console.log('Clicked outside');
-           const value = inputRef.current.value.trim()
-           console.log("The value is ",value)
+        //   console.log('Clicked outside');
+        //    const value = inputRef.current.value.trim()
+        //    console.log("The value is ",value)
 
-            const id = inputRef.current.getAttribute('data-id');
-            const type = inputRef.current.getAttribute('data-type');
+        //     const id = inputRef.current.getAttribute('data-id');
+        //     const type = inputRef.current.getAttribute('data-type');
 
-            console.log(`id: ${id}, type: ${type}`);
+        //     console.log(`id: ${id}, type: ${type}`);
             
           //  if(value){
             
@@ -37,7 +37,7 @@ function App() {
               
           //     addNewNode(id+'',newNode)
           //  }
-          inputRef.current.value=''
+          // inputRef.current.value=''
         }
       };
 
@@ -46,7 +46,7 @@ function App() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [inputRef]);
+  }, []);
 
 
     const getRenderedTree =(parent,marginLeft=1)=>{
