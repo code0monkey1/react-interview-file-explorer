@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import file from './file.png';
 import folder from './folder.png';
 
@@ -19,25 +19,9 @@ const Folder = ({data,inputRef}) => {
   const[type,setType] = useState(null)
   const[toggle,setToggle] = useState(false)
 
-    useEffect(() => {
-
-      const handleClickOutside = (event) => {
-        if (inputRef.current && !inputRef.current.contains(event.target)) {
-          setToggle(!toggle)
-        }
-      };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-
-
-  }, [inputRef]);
 
   return (
-<>
+  <>
     <div  
       style={styles.container} 
      >
