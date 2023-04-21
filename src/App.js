@@ -46,7 +46,7 @@ function App() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [inputRef,addNewNode]);
+  }, [inputRef]);
 
 
     const getRenderedTree =(parent,marginLeft=1)=>{
