@@ -68,15 +68,11 @@ function App() {
       </div>)
     }
   
-  const handleClick=({target})=>{
-         
-        setTree(getToggledTree(target.id))
-   
-     }
+
 
   // console.log("The current state is",JSON.stringify(data,null,2))
   return (
-    <div onClick={handleClick} style={{margin:"4rem"}}>
+    <div onClick={({target})=> {setTree(getToggledTree(target.id))}} style={{margin:"4rem"}}>
       {
           getRenderedTree(data)
       } 
