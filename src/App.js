@@ -51,7 +51,7 @@ function App() {
 
     const getRenderedTree =(parent,marginLeft=1)=>{
       
-      if(!parent)return <></>;
+      if(!parent) return
 
       const newMargin=++marginLeft
 
