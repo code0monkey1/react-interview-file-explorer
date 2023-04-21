@@ -21,19 +21,20 @@ const Folder = ({data,inputRef}) => {
 
     useEffect(() => {
 
-      const handleClickOutside = (event) => {
-        if (inputRef.current && !inputRef.current.contains(event.target)) {
-          setToggle(!toggle)
-        }
-      };
+    //   const handleClickOutside = (event) => {
+    //     if (inputRef.current && !inputRef.current.contains(event.target)) {
+    //       setToggle(!toggle)
+    //     }
+    //   };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    // document.addEventListener('mousedown', handleClickOutside);
 
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    // return () => {
+    //   document.removeEventListener('mousedown', handleClickOutside);
+    // };
 
-  }, []);
+
+  }, [toggle]);
 
   return (
 <>
@@ -47,8 +48,8 @@ const Folder = ({data,inputRef}) => {
       </div>
      
       <div style={styles.buttonContainer}>
-        <button onClick={()=>{setType('file')}}  name='file'>Add File</button>
-        <button onClick={()=>{setType('folder')}}  name='folder' style={{ marginLeft: '0.5rem' }}>Add Folder</button>
+        <button onClick={()=>{setType('file');setToggle(!toggle)}}  name='file'>Add File</button>
+        <button onClick={()=>{setType('folder');setToggle(!toggle)}} name='folder'  style={{ marginLeft: '0.5rem' }}>Add Folder</button>
       </div>
     </div>
     <br/>
