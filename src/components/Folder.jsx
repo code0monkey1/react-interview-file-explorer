@@ -28,7 +28,7 @@ const Folder = ({data,inputRef}) => {
       
       <div style={styles.buttonContainer}>
          <span>🗂️</span>
-        <div style={{ paddingTop: '1rem' }} >{data.name}</div>
+        <div>{data.name}</div>
       </div>
      
       <div style={styles.buttonContainer}>
