@@ -43,13 +43,13 @@ const addNode=(id,newNode,currentNode) =>{
 
 }
 
-const getToggledTree=(id)=>{
+const toggleOpen=(id)=>{
         
           const head=JSON.parse(JSON.stringify(tree));
                  
           toggleItem(head,id)
 
-          return head;
+          setTree(head)
   }
 
 function toggleItem(head,id){
@@ -78,7 +78,7 @@ function closeItems(items){
  }
 
  return{
-  getToggledTree,
+  toggleOpen,
   tree,
   setTree,
   addNewNode
