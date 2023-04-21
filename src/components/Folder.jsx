@@ -27,7 +27,7 @@ const Folder = ({data,inputRef}) => {
      >
       
       <div style={styles.buttonContainer}>
-        <img id={data.id} src={folder} alt="folder" width={60} height={60} />
+         <span>🗂️</span>
         <div style={{ paddingTop: '1rem' }} >{data.name}</div>
       </div>
      
@@ -38,7 +38,7 @@ const Folder = ({data,inputRef}) => {
     </div>
     <br/>
      <div style={{marginLeft:"5rem",display:(toggle?'':"none")}}>
-             <img src={type==="file"?file:folder} alt="folder" width={60} height={60} />
+             {type==='file' ?<span>📝</span> :<span>🗂️ </span>}
              <input ref={inputRef} data-id={data.id} data-type={type} type='text' placeholder={`name of the ${type}`}></input>
       </div>
   </>
