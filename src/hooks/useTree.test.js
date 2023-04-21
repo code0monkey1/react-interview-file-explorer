@@ -81,7 +81,7 @@ describe('file-explorer',()=>{
                         open:false,
                        }
 
-        const {result} = renderHook(useTree,headNode)
+        const {result} = renderHook(useTree,{initialProps:headNode})
 
         act(()=>{
           result.current.toggleOpen("1")
