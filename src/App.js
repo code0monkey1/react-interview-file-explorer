@@ -11,7 +11,7 @@ function App() {
 
     const{tree:data,getToggledTree,setTree,addNewNode} =  useTree(treeData)
     const inputRef = useRef(null);
-
+ 
     useEffect(() => {
       const handleClickOutside = (event) => {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
@@ -71,7 +71,7 @@ function App() {
   
 
 
-  // console.log("The current state is",JSON.stringify(data,null,2))
+  console.log("The current state is",JSON.stringify(data,null,2))
   return (
     <div onClick={({target})=> {setTree(getToggledTree(target.id))}} style={{margin:"4rem"}}>
       {
