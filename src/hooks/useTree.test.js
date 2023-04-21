@@ -77,16 +77,27 @@ describe('file-explorer',()=>{
         const headNode={ id:"1",
                          name: "root",
                         isFolder: true,
+                        items:[{
+                          id:"2",
+                         name: "root",
+                        isFolder: true,
                         items:[],
+                      }],
                        }
 
         const {result} = renderHook(useTree,{initialProps:headNode})
 
         act(()=>{
-          result.current.toggleOpen("1")
+          result.current.toggleOpen("2")
         })   
         
-        expect(JSON.stringify(result.current.tree)).toEqual(JSON.stringify({...headNode,open:true}))
+        expect(JSON.stringify(result.current.tree)).toEqual(JSON.stringify({...headNode,items:[{
+                          id:"2",
+                         name: "root",
+                        isFolder: true,
+                        items:[],
+                        open:true
+                      }]}))
     })
     
 })
