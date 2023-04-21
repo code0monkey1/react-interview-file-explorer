@@ -75,11 +75,14 @@ describe('file-explorer',()=>{
 
     it('toggles the current nodes open attribute',()=>{
         const headNode={ id:"1",
-                                                name: "root",
-                                                isFolder: true,
-                                                items:[],
-                                              }
-         const {result} = renderHook(useTree,headNode)
+                         name: "root",
+                        isFolder: true,
+                        items:[],
+                        open:false,
+                       }
+
+        const {result} = renderHook(useTree,headNode)
+
         act(()=>{
           result.current.toggleOpen("1")
         })                                  
