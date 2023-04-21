@@ -33,6 +33,7 @@ function App() {
                 isFolder:(type==='folder'),
                 items:[]
               }
+              
               console.log("The new node to be inserted is",JSON.stringify(newNode,null,2))
               
               addNewNode(id+'',newNode)
