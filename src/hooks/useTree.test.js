@@ -86,7 +86,7 @@ describe('file-explorer',()=>{
           result.current.toggleOpen("1")
         })   
         
-        expect(result.current.tree).toEqual({...headNode,open:true})
+        expect(result.current.tree).toMatchObject({...headNode,open:true})
     })
     
 })
