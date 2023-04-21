@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 import './App.css';
 import File from './components/File.jsx';
