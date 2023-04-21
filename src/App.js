@@ -24,19 +24,19 @@ function App() {
 
             console.log(`id: ${id}, type: ${type}`);
             
-           if(value){
+          //  if(value){
             
-            const newNode={
-                id:uuid(),
-                name: value,
-                type,
-                isFolder:(type==='folder'),
-                items:[]
-              }
-              console.log("The new node to be inserted is",JSON.stringify(newNode,null,2))
+          //   const newNode={
+          //       id:uuid(),
+          //       name: value,
+          //       type,
+          //       isFolder:(type==='folder'),
+          //       items:[]
+          //     }
+          //     console.log("The new node to be inserted is",JSON.stringify(newNode,null,2))
               
-              addNewNode(id+'',newNode)
-           }
+          //     addNewNode(id+'',newNode)
+          //  }
           inputRef.current.value=''
         }
       };
