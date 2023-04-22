@@ -71,7 +71,7 @@ function App() {
   console.log("The current state is",JSON.stringify(data,null,2))
   
   return (
-    <div onClick={({target})=> {toggleOpen(target.id)}} style={{margin:"4rem"}}>
+    <div onClick={({target})=> {toggleOpen(target.id)}} style={{margin:"2rem"}}>
       {
           getRenderedTree(data)
       } 
