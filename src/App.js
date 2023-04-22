@@ -54,9 +54,9 @@ function App() {
       
       if(!parent) return
 
-      const newMargin=++marginLeft
+      ++marginLeft
 
-      return( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
+      return( <div key={parent.id}  style={{marginLeft:`${marginLeft}rem`}}>
         {
         parent.isFolder? <> 
               <Folder  data={parent} inputRef={inputRef} />
