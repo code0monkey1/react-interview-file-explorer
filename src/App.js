@@ -73,16 +73,7 @@ function App() {
   return (
     <div onClick={({target})=> {toggleOpen(target.id)}} style={{margin:"2rem"}}>
       {
-          <div style={{marginLeft:"2rem"}}> 
-             <span>Parent</span>
-                <div style={{marginLeft:"2rem"}}>
-                  Child
-                  <div style={{marginLeft:"2rem"}}>
-                       Grandchild
-                  </div>
-                </div>
-          
-          </div>
+          getRenderedTree(data)
       } 
       </div>
 
