@@ -50,20 +50,20 @@ function App() {
   }, [inputRef,addNewNode]);
 
 
-    const getRenderedTree =(parent)=>{
+    const getRenderedTree =(node)=>{
       
-      if(!parent) return
+      if(!node) return
      
-      return( <div key={parent.id}  style={{marginLeft:`2rem`}}>
+      return( <div key={node.id}  style={{marginLeft:`2rem`}}>
         {
-        parent.isFolder? <> 
-              <Folder  data={parent} inputRef={inputRef} />
+        node.isFolder? <> 
+              <Folder  data={node} inputRef={inputRef} />
                 {
-                  parent.open?parent.items.map(item=> getRenderedTree(item)):''
+                  node.open?node.items.map(item=> getRenderedTree(item)):''
                 }
             </>
             : 
-               <File data={parent}/> 
+               <File data={node}/> 
         }
       </div>)
     }
