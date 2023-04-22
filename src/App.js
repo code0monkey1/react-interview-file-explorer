@@ -50,18 +50,16 @@ function App() {
   }, [inputRef,addNewNode]);
 
 
-    const getRenderedTree =(parent,marginLeft=1)=>{
+    const getRenderedTree =(parent)=>{
       
       if(!parent) return
 
-      const newMargin=++marginLeft
-
-      return( <div key={parent.id}  style={{marginLeft:`${newMargin}rem`}}>
+      return( <div key={parent.id}  style={{marginLeft:`$2rem`}}>
         {
         parent.isFolder? <> 
               <Folder  data={parent} inputRef={inputRef} />
                 {
-                  parent.open?parent.items.map(item=> getRenderedTree(item,newMargin)):''
+                  parent.open?parent.items.map(item=> getRenderedTree(item)):''
                 }
             </>
             : 
