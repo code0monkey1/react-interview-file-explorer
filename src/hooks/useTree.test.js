@@ -104,16 +104,62 @@ describe('file-explorer',()=>{
            const headNode={ id:"1",
                          name: "root",
                         isFolder: true,
+                        items:[{
+                          id:"2",
+                         name: "inner",
+                        isFolder: true,
                         items:[],
+                      },
+                    {
+                          id:"3",
+                         name: "inner",
+                        isFolder: true,
+                        items:[
+                          {
+                          id:"4",
+                         name: "inner",
+                        isFolder: true,
+                        items:[],
+                      },
+                      {
+                          id:"5",
+                         name: "inner",
+                        isFolder: true,
+                        items:[],
+                      }
+                        ],
+                      }],
                        }
 
         const {result} = renderHook(useTree,{initialProps:headNode})
 
            act(()=>{
-          result.current.removeNode("2")
+          result.current.removeNode("4")
         })  
         
-        expect(result.current.tree).toEqual(headNode)
+        expect(result.current.tree).toEqual({ id:"1",
+                         name: "root",
+                        isFolder: true,
+                        items:[{
+                          id:"2",
+                         name: "inner",
+                        isFolder: true,
+                        items:[],
+                      },
+                    {
+                          id:"3",
+                         name: "inner",
+                        isFolder: true,
+                        items:[
+                          {
+                          id:"5",
+                         name: "inner",
+                        isFolder: true,
+                        items:[],
+                      }
+                        ],
+                      }],
+                       })
     
         })
 
