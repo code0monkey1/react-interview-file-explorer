@@ -43,6 +43,8 @@ const Folder = ({data,addNewNode}) => {
          items:[]
        }
         addNewNode(id+"",newNode)
+
+        inputRef.current.value=''
     }
 
   }
