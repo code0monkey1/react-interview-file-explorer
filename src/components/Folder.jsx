@@ -44,7 +44,7 @@ const Folder = ({data}) => {
               <input autoFocus type="text" onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
             </span> 
           </div>
-      }
+         }
 
     </div>
     </div>
