@@ -99,5 +99,30 @@ describe('file-explorer',()=>{
                         open:true
                       }]}))
     })
+
+    it('removes node if id is provided',()=>{
+           const headNode={ id:"1",
+                         name: "root",
+                        isFolder: true,
+                        items:[{
+                          id:"2",
+                         name: "root",
+                        isFolder: true,
+                        items:[],
+                      }],
+                       }
+
+        const {result} = renderHook(useTree,{initialProps:headNode})
+
+           act(()=>{
+          result.current.removeNode("2")
+        })  
+        
+        expect(result.current.tree).toEqual({id:"1",
+                        name: "root",
+                        isFolder: true,
+                        items:[]}
+                        )
+    })
     
 })
