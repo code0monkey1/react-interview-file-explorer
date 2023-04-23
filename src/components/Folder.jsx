@@ -41,7 +41,7 @@ const Folder = ({data}) => {
           </div>
         { showInput.visible && <div style={{paddingLeft:"2rem"}}>
             <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
-              <input onKeyDown={(e)=>{console.log("Key pressed",e.keyCode)}} autoFocus type="text" onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
+              <input onKeyDown={(e)=>{if(e.key==="Enter")console.log("Enter pressed")}} autoFocus type="text" onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
             </span> 
           </div>
          }
