@@ -135,5 +135,57 @@ describe('file-explorer',()=>{
                        })
     
         })
+        it('updates the name if id is given',()=>{
+             
+        let resultTree={ 
+          id:"1",
+          name: "root",
+          isFolder: true,
+          items: [{
+
+          id:"2",
+          name: "root",
+          isFolder: true,
+          items:[]
+          }
+          ,{
+          id:"3",
+          name: "root",
+          isFolder: true,
+           items:[]
+          }
+        ]
+        }
+        const {result} = renderHook(useTree,{initialProps:resultTree})
+        
+        
+          act(() => {
+            result.current.updateNode("2","chinu")
+          })
+
+          expect(result.current.tree).toEqual({ 
+          id:"1",
+          name: "root",
+          isFolder: true,
+          items: [{
+
+          id:"2",
+          name: "chinu",
+          isFolder: true,
+          items:[]
+          }
+          ,{
+          id:"3",
+          name: "root",
+          isFolder: true,
+           items:[]
+          }
+        ]
+        })
+
+
+ 
+
+        })
 
 })
