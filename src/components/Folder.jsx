@@ -43,6 +43,8 @@ const [showInput,setShowInput]=useState(false)
           <button>Add File +</button>
           <button>Add Folder +</button>
       </div>
-      <div><input type="text"/></div>
+      <div style={{paddingLeft:"2rem"}}>
+        <input type="text"/>
+      </div>
     </>
 }
