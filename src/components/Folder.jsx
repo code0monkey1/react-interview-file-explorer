@@ -31,16 +31,19 @@ export default Folder
 
 
 const Item=({data})=>{
-const [showInput,setShowInput]=useState(false)
+const [showInput,setShowInput]=useState({
+  visible: false,
+  isFolder:false
+})
  return <div >
      <div style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
         <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-        <div onClick={(e)=>{e.stopPropagation();setShowInput(!showInput)}} style={{display:data.isFolder?"block":"none"}}>
-            <button>Add File +</button>
-            <button>Add Folder +</button>
+        <div onClick={(e)=>{e.stopPropagation();setShowInput({...showInput,visible:!showInput.visible})}} style={{display:data.isFolder?"block":"none"}}>
+            <button onClick={()=>{setShowInput({...showInput,isFolder:false})}}>Add File +</button>
+            <button onClick={()=>{setShowInput({...showInput,isFolder:true})}}>Add Folder +</button>
         </div>  
       </div>
-      <div style={{paddingLeft:"2rem",display:showInput?"block":"none"}}>
+      <div style={{paddingLeft:"2rem",display:showInput.visible?"block":"none"}}>
          <input type="text"/>
       </div>
 
