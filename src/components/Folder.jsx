@@ -18,7 +18,7 @@ const Folder = ({data,inputRef}) => {
    
   return<>
   {data.name}
-  {data.items.map((item) => <div>{item.name}</div>)}
+  {data.items.map((item) => <div style={{paddingLeft:"2rem"}}>{item.name}</div>)}
   </>
   
 }
