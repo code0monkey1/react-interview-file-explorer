@@ -51,9 +51,12 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
 
   }
 
-  const renameNode=(id,name)=>{
+  const renameNode=(e,id,name)=>{
+
+      if(e.key==="Enter" && inputRef){
+            updateNode(id,name)
+      }
         
-         updateNode(id,name)
   }
 
 
@@ -62,7 +65,11 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
       onClick={()=>{setOpen(!open)}}  >    
       <div >
           <div style={{width:"30rem",display:"flex",justifyContent:"space-between"}}>
-            <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
+            <span>{data.isFolder?<>🗂️</>:<>📄</>}
+             {updating?<input
+              onBlur={()=>{setUpdating(false)}}
+             onKeyDown={(e)=>{ } }></input>:data.name}
+            </span>
           <div style={{display:data.isFolder?"block":"none"}}>
                 <button  onClick={(e)=>{handleNewFolder(e,false)}}>Add File +</button>
                 <button  onClick={(e)=>{handleNewFolder(e,true)}}>Add Folder +</button>
