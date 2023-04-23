@@ -29,37 +29,7 @@ const addNewNode = (id,newNode) =>{
     
 }
 
-const removeNode = (id) =>{
-    
-  const head=JSON.parse(JSON.stringify(tree));
 
-  if(head.id===id)return<></>
-
- const indexToRemove = head.items.findIndex(obj => obj.id === id);
-
-// Remove the object at the specified index
-if (indexToRemove !== -1) {
-  head.items.splice(indexToRemove, 1);
-  return
-}
-
- for(const item of head.items){
-     remove(id,item)
- }
-return head;
-}
-
-const remove=(id,head)=>{
-
-   const foundItem = head.items.find(item => item.id===id)
-
-  if(foundItem){
-    console.log("found item",foundItem)
-    head.items = head.items.filter(item => item.id!==id)
-    return
-  }
-
-}
 
 const addNode=(id,newNode,currentNode) =>{
        
