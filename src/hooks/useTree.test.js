@@ -115,14 +115,11 @@ describe('file-explorer',()=>{
         const {result} = renderHook(useTree,{initialProps:headNode})
 
            act(()=>{
-          result.current.removeNode("2")
+          result.current.removeNode("1")
         })  
         
-        expect(result.current.tree).toEqual({id:"1",
-                        name: "root",
-                        isFolder: true,
-                        items:[]}
-                        )
-    })
+        expect(result.current.tree).toEqual(<></>)
     
+        })
+
 })
