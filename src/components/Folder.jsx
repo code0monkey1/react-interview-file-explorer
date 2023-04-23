@@ -1,13 +1,11 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 const Folder = ({data}) => {
      const [open,setOpen]=useState(false)
-  
-
-const [showInput,setShowInput]=useState({
-  visible: false,
-  isFolder:false
-})
+    const [showInput,setShowInput]=useState({
+      visible: false,
+      isFolder:false
+    })
 
   const styles={
     foldersStyle:{
@@ -22,12 +20,13 @@ const [showInput,setShowInput]=useState({
   }
 
   const handleNewFolder=(e,isFolder)=>{
-   e.stopPropagation()
+    e.stopPropagation()
+    setOpen(true)
     setShowInput({
       visible:!showInput.visible,
       isFolder
     })
-
+   
  
   }
    return<>
