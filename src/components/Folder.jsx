@@ -50,6 +50,11 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
 
   }
 
+  const renameNode=(id)=>{
+
+         updateNode()
+  }
+
 
    return<>
      <div 
@@ -75,7 +80,7 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
     </div>
      
       <div style={styles.foldersStyle}>
-        {data.items.map((item) =><Folder key={item.id} data={item} addNewNode={addNewNode} removeNode={removeNode} />) }
+        {data.items.map((item) =><Folder key={item.id} data={item} addNewNode={addNewNode} removeNode={removeNode} updateNode={updateNode} />) }
       </div>
    </>
   
