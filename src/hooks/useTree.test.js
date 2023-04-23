@@ -106,7 +106,7 @@ describe('file-explorer',()=>{
                         isFolder: true,
                         items:[{
                           id:"2",
-                         name: "root",
+                         name: "inner",
                         isFolder: true,
                         items:[],
                       }],
