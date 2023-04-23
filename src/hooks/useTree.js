@@ -45,10 +45,7 @@ const toggleOpen=(id)=>{
        
         if(!tree)return
 
-          console.log("The tree is",JSON.stringify(tree,null,2))
           const head=JSON.parse(JSON.stringify(tree));
-
-          console.log("The head is",JSON.stringify(head,null,2));
                  
           toggleItem(head,id)
 
