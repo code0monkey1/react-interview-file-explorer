@@ -39,12 +39,13 @@ const [showInput,setShowInput]=useState(false)
  return<>
   
       <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-      <div onClick={(e)=>{e.stopPropagation()}} style={{display:data.isFolder?"block":"none"}}>
+      <div onClick={(e)=>{e.stopPropagation();setShowInput(!showInput)}} style={{display:data.isFolder?"block":"none"}}>
           <button>Add File +</button>
           <button>Add Folder +</button>
       </div>
-      <div style={{paddingLeft:"2rem"}}>
+      {<div style={{paddingLeft:"2rem",display:showInput?"block":"none"}}>
         <input type="text"/>
       </div>
+      }
     </>
 }
