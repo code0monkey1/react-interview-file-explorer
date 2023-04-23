@@ -32,8 +32,8 @@ export default Folder
 
 const Item=({data})=>{
 const [showInput,setShowInput]=useState(false)
- return <div  style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
-     <div>
+ return <div  >
+     <div style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
         <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
         <div onClick={(e)=>{e.stopPropagation();setShowInput(!showInput)}} style={{display:data.isFolder?"block":"none"}}>
             <button>Add File +</button>
