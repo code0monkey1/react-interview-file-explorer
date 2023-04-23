@@ -40,7 +40,7 @@ console.log(JSON.stringify(showInput,null,2))
  return <div >
      <div style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
         <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-        <div onClick={(e)=>{e.stopPropagation();setShowInput({...showInput,visible:!showInput.visible})}} style={{display:data.isFolder?"block":"none"}}>
+        <div >
             <button  onClick={(e)=>{setShowInput({...showInput,isFolder:false})}}>Add File +</button>
             <button  onClick={(e)=>{setShowInput({...showInput,isFolder:true})}}>Add Folder +</button>
         </div>  
