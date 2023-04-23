@@ -72,46 +72,12 @@ const addNode=(id,newNode,currentNode) =>{
       
 }
 
-const toggleOpen=(id)=>{
-       
-        if(!tree)return
 
-        const head=JSON.parse(JSON.stringify(tree));
-                 
-        toggleItem(head,id)
-
-        setTree(head)
-  }
-
-function toggleItem(head,id){
-      
-            if(head.isFolder && head.id===id) {
-                 head.open=!head.open;
-              
-                 closeItems(head.items)            
-            }               
-                          
-             for (let item of head.items)
-                  toggleItem(item,id)      
-}
    
-function closeItems(items){  
-  
-      items.open=false;
 
-      items.forEach(subItem=>{
-               if(subItem.isFolder){
-                  subItem.open=false;
-                  closeItems(subItem.items)
-              }
-      })
-      
- }
 
  return{
-  toggleOpen,
   tree,
-  setTree,
   addNewNode,
   removeNode
  }
