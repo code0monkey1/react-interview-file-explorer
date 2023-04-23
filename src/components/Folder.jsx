@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
-
+import { v4 as uuid } from 'uuid';
 const Folder = ({data}) => {
+
+     
      const [open,setOpen]=useState(false)
     const [showInput,setShowInput]=useState({
       visible: false,
@@ -34,7 +36,14 @@ const Folder = ({data}) => {
     
     if(e.key==="Enter" && inputRef.current.value.trim()){
         
-       
+       const newNode={
+         id:uuid(),
+         name:inputRef.current.value,
+         isFolder:showInput.isFolder,
+         items:[]
+       }
+
+
 
     }
   }

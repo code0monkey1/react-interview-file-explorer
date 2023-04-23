@@ -9,60 +9,12 @@ import useTree from './hooks/useTree';
 
 function App() {
 
-    const{tree:data,toggleOpen,addNewNode} =  useTree(treeData)
-    const inputRef = useRef(null);
- 
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (inputRef.current && !inputRef.current.contains(event.target)) {
-          console.log('Clicked outside');
-           const value = inputRef.current.value.trim()
-           console.log("The value is ",value)
-
-            const id = inputRef.current.getAttribute('data-id');
-            const type = inputRef.current.getAttribute('data-type');
-
-            console.log(`id: ${id}, type: ${type}`);
-            
-           if(value){
-            
-            const newNode={
-                id:uuid(),
-                name: value,
-                type,
-                isFolder:(type==='folder'),
-                items:[]
-              }
-              
-              console.log("The new node to be inserted is",JSON.stringify(newNode,null,2))
-              
-              addNewNode(id+'',newNode)
-           }
-          inputRef.current.value=''
-        }
-      };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [inputRef,addNewNode]);
-
-
-    const getRenderedTree =(node)=>{
-      
-              <Folder  data={node} inputRef={inputRef} />
-              
-        
-    }
-  
-  console.log("The current state is",JSON.stringify(data,null,2))
+    const{tree:data,addNewNode} =  useTree(treeData)
   
   return (
-
-          getRenderedTree(data)
-
+       <div >
+          <Folder addNewNode={addNewNode}  data={data} />
+       </div>
   );
 }
 
