@@ -45,9 +45,12 @@ console.log(JSON.stringify(showInput,null,2))
             <button  onClick={()=>{setShowInput({...showInput,isFolder:true})}}>Add Folder +</button>
         </div>  
       </div>
-      <div style={{paddingLeft:"2rem",display:showInput.visible?"block":"none"}}>
-         <span>{showInput.isFolder?<>🗂️</>:<>📄</>}<input onBlur={()=>{setShowInput({...showInput,visible:false})}} type="text"/></span> 
+     { showInput.visible && <div style={{paddingLeft:"2rem"}}>
+         <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
+          <input onBlur={()=>{setShowInput({...showInput,visible:false})}} type="text"/>
+         </span> 
       </div>
+   }
 
     </div>
 }
