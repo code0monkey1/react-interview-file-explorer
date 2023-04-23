@@ -9,7 +9,7 @@ function App() {
     const{tree:data,addNewNode} =  useTree(treeData)
     
     console.log("The data is",JSON.stringify(data,null,2))
-
+  
   return (
        <div >
          {data && <Folder addNewNode={addNewNode}  data={data} />}

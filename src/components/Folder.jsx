@@ -68,7 +68,7 @@ const Folder = ({data,addNewNode}) => {
     </div>
      
       <div style={styles.foldersStyle}>
-        {data.items.map((item) =><Folder key={item.id} data={item} />) }
+        {data.items.map((item) =><Folder key={item.id} data={item} addNewNode={addNewNode} />) }
       </div>
    </>
   
