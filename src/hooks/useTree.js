@@ -72,10 +72,6 @@ const addNode=(id,newNode,currentNode) =>{
       
 }
 
-
-   
-
-
  return{
   tree,
   addNewNode,
