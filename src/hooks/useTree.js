@@ -47,6 +47,7 @@ const remove=(id,head)=>{
    const foundItem = head.items.find(item => item.id===id)
 
   if(foundItem){
+    console.log("found item",foundItem)
     head.items = head.items.filter(item => item.id!==id)
     return
   }
