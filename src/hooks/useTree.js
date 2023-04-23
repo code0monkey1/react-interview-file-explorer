@@ -29,6 +29,25 @@ const addNewNode = (id,newNode) =>{
     
 }
 
+const updateNode=(id,newName)=>{
+        const head=JSON.parse(JSON.stringify(tree));
+
+        update(id,newName,head)
+
+}
+
+const update =(id,newName,head)=>{
+      
+      if(id===head.id){
+        head.name=newName
+        return
+      }
+    
+      for( let node in head.items){
+        update(id,newName,node)
+      }
+}
+
 
 const removeNode = (id)=>{
     
@@ -75,7 +94,8 @@ const addNode=(id,newNode,currentNode) =>{
  return{
   tree,
   addNewNode,
-  removeNode
+  removeNode,
+  updateNode
  }
 
 }
