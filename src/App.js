@@ -6,7 +6,7 @@ import useTree from './hooks/useTree';
 
 function App() {
 
-    const{tree,addNewNode} =  useTree(null)
+    const{tree,addNewNode} =  useTree(treeData)
   
   return (
        <div >
