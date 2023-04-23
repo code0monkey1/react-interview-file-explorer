@@ -54,9 +54,10 @@ const removeNodeWithId=(id,head)=>{
         head.items.splice(indexToRemove, 1);
         return;
       }
-      for(const node of head.items){
+
+      for(const node of head.items)
            removeNodeWithId(id,node)
-      }
+      
 }
 
 const addNode=(id,newNode,currentNode) =>{
