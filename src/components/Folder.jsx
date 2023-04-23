@@ -19,7 +19,7 @@ const Folder = ({data}) => {
    
   return<>
   {data.name}
-  {data.items.map((item) => <div key={data.id} style={{paddingLeft:"2rem"}}><Folder data={data} /></div>)}
+  {data.items.map((item) => <div key={item.id} style={{paddingLeft:"2rem"}}><Folder data={item} /></div>)}
   </>
   
 }
