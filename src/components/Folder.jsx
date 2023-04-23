@@ -51,12 +51,13 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
 
   }
 
-  const renameNode=(e,id,name)=>{
+  const renameNode=(e,id)=>{
 
       if(e.key==="Enter" && inputRef){
-            updateNode(id,name)
+            updateNode(id,inputRef.current.value)
       }
-        
+         inputRef.current.value=''
+        inputRef.current.blur(); 
   }
 
 
@@ -67,8 +68,9 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
           <div style={{width:"30rem",display:"flex",justifyContent:"space-between"}}>
             <span>{data.isFolder?<>🗂️</>:<>📄</>}
              {updating?<input
+              autoFocus
               onBlur={()=>{setUpdating(false)}}
-             onKeyDown={(e)=>{ } }></input>:data.name}
+              onKeyDown={(e)=>{ renameNode(e,data.id)} }></input>:data.name}
             </span>
           <div style={{display:data.isFolder?"block":"none"}}>
                 <button  onClick={(e)=>{handleNewFolder(e,false)}}>Add File +</button>
@@ -79,7 +81,10 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
           </div>
         { showInput.visible && <div style={{paddingLeft:"2rem"}}>
             <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
-              <input onKeyDown={(e)=>addNode(e,data.id)} ref={inputRef} autoFocus type="text" 
+              <input onKeyDown={(e)=>addNode(e,data.id)}
+               ref={inputRef}
+                autoFocus 
+                type="text" 
               onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
             </span> 
           </div>
