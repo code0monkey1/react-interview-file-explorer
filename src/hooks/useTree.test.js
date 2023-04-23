@@ -118,7 +118,13 @@ describe('file-explorer',()=>{
           result.current.removeNode("1")
         })  
         
-        expect(result.current.tree).toEqual(<></>)
+        expect(result.current.tree).toEqual(
+                       {
+                        id:"1",
+                         name: "root",
+                        isFolder: true,
+                        items:[]
+                     })
     
         })
 
