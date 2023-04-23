@@ -5,11 +5,11 @@
 
 ## Features :
 
-1. Must get folder structure from `json` data and display it.
-1. Must expand-contract the folder structure as per interaction with it
-1. Should be able to create new files and folder on user interaction.
-1. Should be able to delete file / folder 
-1. Should be able to rename a file / folder
+1. Must get folder structure from `json` data and display it. [X]
+1. Must expand-contract the folder structure as per interaction with it [X]
+1. Should be able to create new files and folder on user interaction. [X]
+1. Should be able to delete file / folder [X]
+1. Should be able to rename a file / folder [ ]
 
 ### *Creating a useTree hook*
 
