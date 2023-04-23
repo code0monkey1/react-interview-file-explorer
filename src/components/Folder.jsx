@@ -44,7 +44,7 @@ const [showInput,setShowInput]=useState({
         </div>  
       </div>
       <div style={{paddingLeft:"2rem",display:showInput?"block":"none"}}>
-         <input type="text"/>
+        <span>{showInput.isFolder?<>🗂️</>:<>📄</>}<input type="text"/></span>  
       </div>
 
     </>
