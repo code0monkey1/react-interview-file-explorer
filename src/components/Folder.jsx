@@ -34,7 +34,7 @@ const Folder = ({data}) => {
     
     if(e.key==="Enter" && inputRef.current.value.trim()){
         
-        console.log("The value is ",inputRef.current.value.trim())
+      
 
     }
   }
