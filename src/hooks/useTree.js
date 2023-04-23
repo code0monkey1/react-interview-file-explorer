@@ -38,6 +38,7 @@ const removeNode = (id)=>{
      if(head.id===id) {
      
       head.items=[]
+      head.name="parent"
       setTree(head)
 
       return;

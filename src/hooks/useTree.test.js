@@ -121,7 +121,7 @@ describe('file-explorer',()=>{
         expect(result.current.tree).toEqual(
                        {
                         id:"1",
-                         name: "root",
+                        name:"parent",
                         isFolder: true,
                         items:[]
                      })
