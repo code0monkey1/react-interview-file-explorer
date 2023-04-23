@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 const Folder = ({data}) => {
      const [open,setOpen]=useState(false)
-     const inputRef = useRef(null);
+  
 
 const [showInput,setShowInput]=useState({
   visible: false,
@@ -17,9 +17,18 @@ const [showInput,setShowInput]=useState({
     itemStyle:{
         display:"flex",
         justifyContent:"space-between",
-    }
-    
+    },
+ 
   }
+
+    const inputStyle = {
+    cursor: 'default',
+  };
+
+  const handleClick = () => {
+    inputStyle.cursor = 'text';
+  };
+
 
   const handleNewFolder=(e,isFolder)=>{
    e.stopPropagation()
@@ -27,6 +36,7 @@ const [showInput,setShowInput]=useState({
       visible:!showInput.visible,
       isFolder
     })
+    handleClick()
  
   }
    return<>
