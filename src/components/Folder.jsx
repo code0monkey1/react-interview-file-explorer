@@ -16,12 +16,12 @@ const Folder = ({data}) => {
   }
    return<>
 
-      <div onClick={()=>{setOpen(!open)}} style={{width:"20rem",backgroundColor:"grey"}} >
-        <span>{data.isFolder?<>🗂️</>:<>📄</>}</span>
-        {data.name}
-    
-          <span>Add File</span>
-          <span>Add Folder</span>
+      <div onClick={()=>{setOpen(!open)}} style={{width:"20rem",display:"flex",justifyContent:"space-between"}} >
+        <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
+        <div>
+          <button>Add File +</button>
+          <button>Add Folder +</button>
+        </div>
     
       </div> 
 
