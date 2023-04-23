@@ -35,7 +35,7 @@ const removeNode = (id)=>{
      const head=JSON.parse(JSON.stringify(tree));
     
      if(head.id===id) {
-      console("Cannot Delete Root Node")
+      alert("Cannot Delete Root Node")
       return;
     }
          

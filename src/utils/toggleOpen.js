@@ -4,7 +4,7 @@ const getToggledTree=(event,data)=>{
 
           const id=event.target.id
 
-          console.log("The id obtained is",event.target.id);
+          // console.log("The id obtained is",event.target.id);
             
          
           toggleItem(head,id)

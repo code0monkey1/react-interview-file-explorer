@@ -60,7 +60,7 @@ const Folder = ({data,addNewNode,removeNode}) => {
           <div style={{display:data.isFolder?"block":"none"}}>
                 <button  onClick={(e)=>{handleNewFolder(e,false)}}>Add File +</button>
                 <button  onClick={(e)=>{handleNewFolder(e,true)}}>Add Folder +</button>
-                <button onClick={(e)=>{removeNode(data.id)}}>  Delete - </button>
+                <button onClick={()=>{removeNode(data.id)}}>  Delete - </button>
             </div>  
           </div>
         { showInput.visible && <div style={{paddingLeft:"2rem"}}>
