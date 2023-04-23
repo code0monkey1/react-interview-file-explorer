@@ -52,20 +52,9 @@ function App() {
 
     const getRenderedTree =(node)=>{
       
-      if(!node) return
-     
-      return( <div key={node.id}  style={{marginLeft:`2rem`}}>
-        {
-        node.isFolder? <> 
               <Folder  data={node} inputRef={inputRef} />
-                {
-                  node.open?node.items.map(item=> getRenderedTree(item)):''
-                }
-            </>
-            : 
-               <File data={node}/> 
-        }
-      </div>)
+              
+        
     }
   
   console.log("The current state is",JSON.stringify(data,null,2))
@@ -73,7 +62,6 @@ function App() {
   return (
 
           getRenderedTree(data)
-
 
   );
 }
