@@ -3,9 +3,9 @@
 ![Folder](./pics/folder-structure.jpg "folder structure to be created")
 
 
-## Features :
+## Functional Requirements:
 
-1. - [X]   Must get folder structure from `json` data and display it. 
+1. - [X]  Must get folder structure from `json` data and display it. 
 1. - [X]  Must expand-contract the folder structure as per interaction with it. 
 1. - [X]  Should be able to create new files and folder on user interaction. 
 1. - [X]  Should be able to delete file / folder.
