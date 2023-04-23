@@ -14,7 +14,8 @@ function App() {
          addNewNode={addNewNode}
          removeNode={removeNode} 
          data={tree}
-         updateNode={updateNode} />}
+         updateNode={updateNode} 
+         />}
        </div>
   );
 }
