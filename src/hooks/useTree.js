@@ -30,6 +30,12 @@ const addNewNode = (id,newNode) =>{
 }
 
 
+const removeNode = (id)=>{
+
+     const head=JSON.parse(JSON.stringify(tree));
+
+    head.items.find
+}
 
 const addNode=(id,newNode,currentNode) =>{
        
