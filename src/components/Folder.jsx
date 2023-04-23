@@ -16,8 +16,7 @@ const Folder = ({data}) => {
   }
    return<>
      <div 
-      onClick={()=>{setOpen(!open)}} 
-      style={{width:"20rem",display:"flex",justifyContent:"space-between"}} >    
+      onClick={()=>{setOpen(!open)}}  >    
         <Item data={data} open={open}/>
      </div>
      
@@ -33,15 +32,17 @@ export default Folder
 
 const Item=({data})=>{
 const [showInput,setShowInput]=useState(false)
- return<>
-  
-      <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-      <div onClick={(e)=>{e.stopPropagation();setShowInput(!showInput)}} style={{display:data.isFolder?"block":"none"}}>
-          <button>Add File +</button>
-          <button>Add Folder +</button>
-      </div>  
+ return <div  style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
+     <div>
+        <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
+        <div onClick={(e)=>{e.stopPropagation();setShowInput(!showInput)}} style={{display:data.isFolder?"block":"none"}}>
+            <button>Add File +</button>
+            <button>Add Folder +</button>
+        </div>  
+      </div>
       <div style={{paddingLeft:"2rem",display:showInput?"block":"none"}}>
          <input type="text"/>
       </div>
-    </>
+
+    </div>
 }
