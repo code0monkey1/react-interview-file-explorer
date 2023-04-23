@@ -23,7 +23,7 @@ const useTree=(treeData)=>{
 const getNewTree = (tree)=>{
  
   const head=JSON.parse(JSON.stringify(tree));
- return head
+  return head
 
 }
 const addNewNode = (id,newNode) =>{
