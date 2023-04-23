@@ -19,7 +19,7 @@ const Folder = ({data}) => {
 
       <div onClick={()=>{setOpen(!open)}} style={{width:"20rem",display:"flex",justifyContent:"space-between"}} >
         <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-        <div onClick={(e)=>{e.stopPropagation()}}>
+        <div onClick={(e)=>{e.stopPropagation()}} style={{display:open?"none":"block" }}>
           <button>Add File +</button>
           <button>Add Folder +</button>
         </div>
