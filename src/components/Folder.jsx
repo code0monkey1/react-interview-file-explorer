@@ -19,6 +19,14 @@ const [showInput,setShowInput]=useState({
     }
     
   }
+
+  const handleNewFolder=(e,isFolder)=>{
+   e.stopPropagation()
+    setShowInput({
+      visible:!showInput.visible,
+      isFolder
+    })
+  }
    return<>
      <div 
       onClick={()=>{setOpen(!open)}}  >    
