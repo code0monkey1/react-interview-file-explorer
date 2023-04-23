@@ -19,7 +19,6 @@ const Folder = ({data}) => {
       onClick={()=>{setOpen(!open)}} 
       style={{width:"20rem",display:"flex",justifyContent:"space-between"}} >    
         <Item data={data} open={open}/>
-
      </div>
      
       <div style={styles.foldersStyle}>
