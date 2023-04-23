@@ -36,7 +36,7 @@ const Item=({data,open})=>{
  return<>
   
       <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-      <div onClick={(e)=>{e.stopPropagation()}} style={{display:data.isFolder&&open?"block":"none"}}>
+      <div onClick={(e)=>{e.stopPropagation()}} style={{display:data.isFolder?"block":"none"}}>
           <button>Add File +</button>
           <button>Add Folder +</button>
       </div>
