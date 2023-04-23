@@ -39,20 +39,20 @@ const removeNode = (id)=>{
       return;
     }
          
-    for(const item of head.items){
-        const itemFound= remove(id,item)
+    for(const node of head.items){
+        const itemFound= remove(id,node.items)
          if(itemFound)return;
     }
       
     setTree(head)
 }
 
-const remove=(id,head)=>{
+const remove=(id,items)=>{
 
-    const indexToRemove=head.items.findIndex(obj => obj.id === id)
+    const indexToRemove=items.findIndex(obj => obj.id === id)
 
     if(indexToRemove!==-1){
-      head.items.splice(indexToRemove,1)
+      items.splice(indexToRemove,1)
       return
     }
     return indexToRemove!==-1
