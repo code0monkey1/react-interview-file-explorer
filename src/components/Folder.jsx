@@ -44,8 +44,6 @@ const Folder = ({data,addNewNode}) => {
        }
         addNewNode(id+"",newNode)
     }
-   
-  
 
   }
    return<>

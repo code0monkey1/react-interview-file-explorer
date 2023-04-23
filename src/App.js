@@ -12,7 +12,7 @@ function App() {
 
   return (
        <div >
-         {data && <Folder addNode={addNewNode}  data={data} />}
+         {data && <Folder addNewNode={addNewNode}  data={data} />}
        </div>
   );
 }
