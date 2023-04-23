@@ -21,7 +21,7 @@ const Folder = ({data}) => {
 
   <div onClick={()=>{setOpen(!open)}}><span>{data.isFolder?<>🗂️</>:<>📄</>}</span>{data.name}</div> 
 
-  <div  style={{paddingLeft:"2rem",visibility:open}}>
+  <div  style={{paddingLeft:"2rem",display:open?"none":"block"}}>
    {data.items.map((item) =><Folder key={item.id} data={item} />) }
   </div>
  
