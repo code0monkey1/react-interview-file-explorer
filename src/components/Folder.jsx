@@ -13,7 +13,6 @@ const Folder = ({data}) => {
         justifyContent:"space-between",
     }
     
-
   }
    return<>
      <div 
@@ -36,11 +35,11 @@ const Item=({data})=>{
 
  return<>
   
-        <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-        <div onClick={(e)=>{e.stopPropagation()}} style={{display:data.isFolder?"block":"none"}}>
+      <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
+      <div onClick={(e)=>{e.stopPropagation()}} style={{display:data.isFolder?"block":"none"}}>
           <button>Add File +</button>
           <button>Add Folder +</button>
-        </div>
+      </div>
 
- </>
+    </>
 }
