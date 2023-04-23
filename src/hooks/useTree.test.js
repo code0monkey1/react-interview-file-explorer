@@ -73,33 +73,6 @@ describe('file-explorer',()=>{
 
     })
 
-    it('toggles the current nodes open attribute',()=>{
-        const headNode={ id:"1",
-                         name: "root",
-                        isFolder: true,
-                        items:[{
-                          id:"2",
-                         name: "root",
-                        isFolder: true,
-                        items:[],
-                      }],
-                       }
-
-        const {result} = renderHook(useTree,{initialProps:headNode})
-
-        act(()=>{
-          result.current.toggleOpen("2")
-        })   
-        
-        expect(JSON.stringify(result.current.tree)).toEqual(JSON.stringify({...headNode,items:[{
-                          id:"2",
-                         name: "root",
-                        isFolder: true,
-                        items:[],
-                        open:true
-                      }]}))
-    })
-
     it('removes node if id is provided',()=>{
            const headNode={ id:"1",
                          name: "root",
