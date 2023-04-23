@@ -32,13 +32,22 @@ const addNewNode = (id,newNode) =>{
 
 const removeNode = (id)=>{
     
-    
      const head=JSON.parse(JSON.stringify(tree));
     
      if(head.id===id) {
-      alert("Cannot Delete Root Node")
+      console("Cannot Delete Root Node")
       return;
     }
+         
+    for(const item of head.items){
+        const itemFound= remove(id,item)
+         if(itemFound)return;
+    }
+      
+    setTree(head)
+}
+
+const remove=(id,head)=>{
 
     const indexToRemove=head.items.findIndex(obj => obj.id === id)
 
@@ -46,8 +55,7 @@ const removeNode = (id)=>{
       head.items.splice(indexToRemove,1)
       return
     }
-
-    setTree(head)
+    return indexToRemove!==-1
 }
 
 const addNode=(id,newNode,currentNode) =>{
@@ -66,11 +74,11 @@ const toggleOpen=(id)=>{
        
         if(!tree)return
 
-          const head=JSON.parse(JSON.stringify(tree));
+        const head=JSON.parse(JSON.stringify(tree));
                  
-          toggleItem(head,id)
+        toggleItem(head,id)
 
-          setTree(head)
+        setTree(head)
   }
 
 function toggleItem(head,id){
@@ -83,7 +91,7 @@ function toggleItem(head,id){
                           
              for (let item of head.items)
                   toggleItem(item,id)      
-          }
+}
    
 function closeItems(items){  
   
