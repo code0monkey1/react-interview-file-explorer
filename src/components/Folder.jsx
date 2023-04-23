@@ -18,12 +18,13 @@ const styles = {
 const Folder = ({data}) => {
    const [open,setOpen]=useState(false)
   return<>
-  {data.name}
+
+  <div><span>{data.isFolder?<> 📂</>:<>📄</>}</span>{data.name}</div> 
 
   <div  style={{paddingLeft:"2rem"}}>
    {data.items.map((item) =><Folder key={item.id} data={item} />) }
   </div>
-  
+ 
   </>
   
 }
