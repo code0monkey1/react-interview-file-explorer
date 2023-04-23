@@ -54,11 +54,12 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
   const renameNode=(e,id)=>{
 
       if(e.key==="Enter" && inputRef){
-            updateNode(id,inputRef.current.value)
+              updateNode(id,inputRef.current.value)
+              inputRef.current.value=''
+              inputRef.current.blur(); 
+         }
       }
-         inputRef.current.value=''
-        inputRef.current.blur(); 
-  }
+      
 
 
    return<>
@@ -102,10 +103,3 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
 }
 
 export default Folder
-
-
-// const Item=({data})=>{
-
-// console.log(JSON.stringify(showInput,null,2))
-//  return 
-// }

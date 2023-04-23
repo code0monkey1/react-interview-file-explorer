@@ -9,7 +9,7 @@
 1. - [X]  Must expand-contract the folder structure as per interaction with it. 
 1. - [X]  Should be able to create new files and folder on user interaction. 
 1. - [X]  Should be able to delete file / folder.
-1. - [ ]  Should be able to rename a file / folder.
+1. - [X]  Should be able to rename a file / folder.
 
 ### *Creating a useTree hook*
 
