@@ -16,16 +16,15 @@ const Folder = ({data}) => {
 
   }
    return<>
-     <div onClick={()=>{setOpen(!open)}} style={{width:"20rem",display:"flex",justifyContent:"space-between"}} >
-        
+     <div 
+      onClick={()=>{setOpen(!open)}} 
+      style={{width:"20rem",display:"flex",justifyContent:"space-between"}} >    
         <Item data={data} />
-        
      </div>
      
       <div  style={styles.foldersStyle}>
         {data.items.map((item) =><Folder key={item.id} data={item} />) }
       </div>
-    
    </>
   
 }
@@ -35,7 +34,6 @@ export default Folder
 
 const Item=({data})=>{
 
-
  return<>
   
         <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
@@ -43,7 +41,6 @@ const Item=({data})=>{
           <button>Add File +</button>
           <button>Add Folder +</button>
         </div>
-    
 
  </>
 }
