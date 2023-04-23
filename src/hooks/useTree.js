@@ -44,7 +44,7 @@ const update =(id,newName,head)=>{
         return
       }
     
-      for( const node in head.items){
+      for( const node of head.items){
         update(id,newName,node)
       }
 }
