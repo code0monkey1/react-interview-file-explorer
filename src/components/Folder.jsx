@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { v4 as uuid } from 'uuid';
-const Folder = ({data,addNewNode}) => {
+const Folder = ({data,addNewNode,removeNode}) => {
 
   
     const [open,setOpen]=useState(false)
@@ -49,11 +49,13 @@ const Folder = ({data,addNewNode}) => {
     }
 
   }
+
+
    return<>
      <div 
       onClick={()=>{setOpen(!open)}}  >    
       <div >
-          <div style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
+          <div style={{width:"30rem",display:"flex",justifyContent:"space-between"}}>
             <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
           <div style={{display:data.isFolder?"block":"none"}}>
                 <button  onClick={(e)=>{handleNewFolder(e,false)}}>Add File +</button>
@@ -70,7 +72,7 @@ const Folder = ({data,addNewNode}) => {
     </div>
      
       <div style={styles.foldersStyle}>
-        {data.items.map((item) =><Folder key={item.id} data={item} addNewNode={addNewNode} />) }
+        {data.items.map((item) =><Folder key={item.id} data={item} addNewNode={addNewNode} removeNode={removeNode} />) }
       </div>
    </>
   

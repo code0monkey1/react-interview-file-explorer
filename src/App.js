@@ -6,11 +6,11 @@ import useTree from './hooks/useTree';
 
 function App() {
 
-    const{tree,addNewNode} =  useTree(treeData)
+    const{tree,addNewNode,removeNode} =  useTree(treeData)
   
   return (
        <div >
-         {tree && <Folder addNewNode={addNewNode}  data={tree} />}
+         {tree && <Folder addNewNode={addNewNode} removeNode={removeNode}  data={tree} />}
        </div>
   );
 }
