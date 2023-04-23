@@ -68,9 +68,11 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
           <div style={{width:"30rem",display:"flex",justifyContent:"space-between"}}>
             <span>{data.isFolder?<>🗂️</>:<>📄</>}
              {updating?<input
+              ref={inputRef}
               autoFocus
               onBlur={()=>{setUpdating(false)}}
               onKeyDown={(e)=>{ renameNode(e,data.id)} }></input>:data.name}
+              <button onClick={()=>setUpdating(true)}>Update Name</button>
             </span>
           <div style={{display:data.isFolder?"block":"none"}}>
                 <button  onClick={(e)=>{handleNewFolder(e,false)}}>Add File +</button>
