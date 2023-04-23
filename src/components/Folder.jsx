@@ -4,6 +4,7 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
 
   
     const [open,setOpen]=useState(false)
+    const [updating,setUpdating]=useState(false)
     const [showInput,setShowInput]=useState({
       visible: false,
       isFolder:false
@@ -50,9 +51,9 @@ const Folder = ({data,addNewNode,removeNode,updateNode}) => {
 
   }
 
-  const renameNode=(id)=>{
-
-         updateNode()
+  const renameNode=(id,name)=>{
+        
+         updateNode(id,name)
   }
 
 
