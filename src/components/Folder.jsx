@@ -21,22 +21,13 @@ const [showInput,setShowInput]=useState({
  
   }
 
-    const inputStyle = {
-    cursor: 'default',
-  };
-
-  const handleClick = () => {
-    inputStyle.cursor = 'text';
-  };
-
-
   const handleNewFolder=(e,isFolder)=>{
    e.stopPropagation()
     setShowInput({
       visible:!showInput.visible,
       isFolder
     })
-    handleClick()
+
  
   }
    return<>
@@ -52,7 +43,7 @@ const [showInput,setShowInput]=useState({
           </div>
         { showInput.visible && <div style={{paddingLeft:"2rem"}}>
             <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
-              <input  type="text"/>
+              <input autoFocus type="text"/>
             </span> 
           </div>
       }
