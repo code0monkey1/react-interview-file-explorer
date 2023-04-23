@@ -106,7 +106,8 @@ function closeItems(items){
   toggleOpen,
   tree,
   setTree,
-  addNewNode
+  addNewNode,
+  removeNode
  }
 
 }
