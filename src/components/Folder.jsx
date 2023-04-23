@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const Folder = ({data}) => {
      const [open,setOpen]=useState(false)
-     
+
 const [showInput,setShowInput]=useState({
   visible: false,
   isFolder:false
@@ -25,7 +25,7 @@ const [showInput,setShowInput]=useState({
       <div >
           <div style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
             <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-            <div onClick={(e)=>{setShowInput({...showInput,visible:!showInput.visible})}} style={{display:data.isFolder?"block":"none"}}>
+          <div>
                 <button  onClick={()=>{setShowInput({...showInput,isFolder:false})}}>Add File +</button>
                 <button  onClick={()=>{setShowInput({...showInput,isFolder:true})}}>Add Folder +</button>
             </div>  
