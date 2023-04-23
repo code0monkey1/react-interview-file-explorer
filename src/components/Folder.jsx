@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { v4 as uuid } from 'uuid';
-const Folder = ({data,addNewNode,removeNode}) => {
+const Folder = ({data,addNewNode,removeNode,updateNode}) => {
 
   
     const [open,setOpen]=useState(false)
