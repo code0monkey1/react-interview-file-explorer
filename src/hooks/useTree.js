@@ -35,7 +35,10 @@ const removeNode = (id)=>{
     
      const head=JSON.parse(JSON.stringify(tree));
     
-     if(head.id===id) return<></>
+     if(head.id===id) {
+      setTree(<></>)
+      return
+    }
 
     const indexToRemove=head.items.findIndex(obj => obj.id === id)
 
