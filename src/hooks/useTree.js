@@ -38,6 +38,7 @@ const removeNode = (id)=>{
 
     if(indexToRemove!==-1){
       head.items.splice(indexToRemove,1)
+      return
     }
 
     setTree(head)
