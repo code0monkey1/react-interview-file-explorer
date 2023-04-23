@@ -43,7 +43,7 @@ const [showInput,setShowInput]=useState({
           </div>
         { showInput.visible && <div style={{paddingLeft:"2rem"}}>
             <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
-              <input autoFocus type="text"/>
+              <input autoFocus type="text" onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
             </span> 
           </div>
       }
