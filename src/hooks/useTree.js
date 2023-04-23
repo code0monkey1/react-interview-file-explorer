@@ -39,23 +39,23 @@ const removeNode = (id)=>{
       return;
     }
          
-    for(const node of head.items){
-        const itemFound= remove(id,node.items)
-         if(itemFound)return;
-    }
-      
+    removeNodeWithId(id,head)
+    
     setTree(head)
 }
 
-const remove=(id,items)=>{
-
-    const indexToRemove=items.findIndex(obj => obj.id === id)
-
-    if(indexToRemove!==-1){
-      items.splice(indexToRemove,1)
-      return
-    }
-    return indexToRemove!==-1
+const removeNodeWithId=(id,head)=>{
+      
+      const indexOfItem = head.items.find(item => item.id===id)
+       
+      if(indexOfItem!==-1){
+         head.items = head.items.filter(item => item.id!==indexOfItem)
+         return
+      }
+      
+      for(const node of head.items){
+           removeNodeWithId(id,node)
+      }
 }
 
 const addNode=(id,newNode,currentNode) =>{
