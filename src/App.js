@@ -6,13 +6,11 @@ import useTree from './hooks/useTree';
 
 function App() {
 
-    const{tree:data,addNewNode} =  useTree(treeData)
-    
-    console.log("The data is",JSON.stringify(data,null,2))
+    const{tree,addNewNode} =  useTree(treeData)
   
   return (
        <div >
-         {data && <Folder addNewNode={addNewNode}  data={data} />}
+         {tree && <Folder addNewNode={addNewNode}  data={tree} />}
        </div>
   );
 }
