@@ -33,7 +33,8 @@ const updateNode=(id,newName)=>{
         const head=JSON.parse(JSON.stringify(tree));
 
         update(id,newName,head)
-
+       
+        setTree(head)
 }
 
 const update =(id,newName,head)=>{
