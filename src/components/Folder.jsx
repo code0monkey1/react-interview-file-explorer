@@ -47,7 +47,7 @@ console.log(JSON.stringify(showInput,null,2))
       </div>
      { showInput.visible && <div style={{paddingLeft:"2rem"}}>
          <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
-          <input onBlur={()=>{setShowInput({...showInput,visible:false})}} type="text"/>
+          <input type="text"/>
          </span> 
       </div>
    }
