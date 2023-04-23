@@ -20,13 +20,13 @@ const Folder = ({data}) => {
   }
 
   const handleNewFolder=(e,isFolder)=>{
-    e.stopPropagation()
+ 
     setOpen(true)
     setShowInput({
       visible:!showInput.visible,
       isFolder
     })
-   
+      e.stopPropagation()
  
   }
    return<>
