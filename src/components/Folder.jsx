@@ -63,7 +63,6 @@ const Folder = ({data,addNewNode}) => {
             </span> 
           </div>
          }
-
     </div>
     </div>
      
