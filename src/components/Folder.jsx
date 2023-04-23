@@ -45,6 +45,7 @@ const Folder = ({data,addNewNode}) => {
         addNewNode(id+"",newNode)
 
         inputRef.current.value=''
+        inputRef.current.blur();
     }
 
   }
