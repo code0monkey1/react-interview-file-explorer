@@ -32,10 +32,8 @@ const Folder = ({data}) => {
 export default Folder
 
 
-const Item=({data,open})=>{
+const Item=({data})=>{
 const [showInput,setShowInput]=useState(false)
-
-
  return<>
   
       <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
@@ -43,9 +41,11 @@ const [showInput,setShowInput]=useState(false)
           <button>Add File +</button>
           <button>Add Folder +</button>
       </div>
-      {<div style={{paddingLeft:"2rem",display:showInput?"block":"none"}}>
-        <input type="text"/>
-      </div>
+      {<>
+        <div style={{paddingLeft:"2rem",display:showInput?"block":"none"}}>
+         <input type="text"/>
+        </div>
+      </>
       }
     </>
 }
