@@ -4,7 +4,10 @@ const Folder = ({data}) => {
    const [open,setOpen]=useState(false)
   return<>
 
-  <div onClick={()=>{setOpen(!open)}}><span>{data.isFolder?<>🗂️</>:<>📄</>}</span>{data.name}</div> 
+  <div onClick={()=>{setOpen(!open)}}>
+    <span>{data.isFolder?<>🗂️</>:<>📄</>}</span>
+    {data.name}
+  </div> 
 
   <div  style={{paddingLeft:"2rem",display:open?"none":"block"}}>
    {data.items.map((item) =><Folder key={item.id} data={item} />) }
@@ -15,3 +18,5 @@ const Folder = ({data}) => {
 }
 
 export default Folder
+
+
