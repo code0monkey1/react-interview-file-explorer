@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 const Folder = ({data}) => {
      const [open,setOpen]=useState(false)
+     const inputRef = useRef(null);
 
 const [showInput,setShowInput]=useState({
   visible: false,
@@ -26,6 +27,7 @@ const [showInput,setShowInput]=useState({
       visible:!showInput.visible,
       isFolder
     })
+ 
   }
    return<>
      <div 
@@ -40,7 +42,7 @@ const [showInput,setShowInput]=useState({
           </div>
         { showInput.visible && <div style={{paddingLeft:"2rem"}}>
             <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
-              <input type="text"/>
+              <input  type="text"/>
             </span> 
           </div>
       }
