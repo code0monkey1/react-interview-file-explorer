@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 const Folder = ({data,addNewNode}) => {
 
-     console.log("Data is ",JSON.stringify(data,null,2));
+  
     const [open,setOpen]=useState(false)
     const [showInput,setShowInput]=useState({
       visible: false,
@@ -44,7 +44,8 @@ const Folder = ({data,addNewNode}) => {
        }
         addNewNode(id+"",newNode)
     }
-
+   
+  
 
   }
    return<>
