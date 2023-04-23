@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import { v4 as uuid } from 'uuid';
-const Folder = ({data}) => {
+const Folder = ({data,addNewNode}) => {
 
      
-     const [open,setOpen]=useState(false)
+    const [open,setOpen]=useState(false)
     const [showInput,setShowInput]=useState({
       visible: false,
       isFolder:false
@@ -32,7 +32,7 @@ const Folder = ({data}) => {
    
   }
 
-  const addNode=(e)=>{
+  const addNode=(e,id)=>{
     
     if(e.key==="Enter" && inputRef.current.value.trim()){
         
@@ -42,10 +42,10 @@ const Folder = ({data}) => {
          isFolder:showInput.isFolder,
          items:[]
        }
-
-
-
+        addNewNode(id+"",newNode)
     }
+
+
   }
    return<>
      <div 
@@ -60,7 +60,7 @@ const Folder = ({data}) => {
           </div>
         { showInput.visible && <div style={{paddingLeft:"2rem"}}>
             <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
-              <input onKeyDown={(e)=>addNode(e)} ref={inputRef} autoFocus type="text" onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
+              <input onKeyDown={(e)=>addNode(e,data.id)} ref={inputRef} autoFocus type="text" onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
             </span> 
           </div>
          }

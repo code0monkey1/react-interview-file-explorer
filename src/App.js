@@ -13,7 +13,7 @@ function App() {
   
   return (
        <div >
-          <Folder addNewNode={addNewNode}  data={data} />
+          <Folder addNode={addNewNode}  data={data} />
        </div>
   );
 }
