@@ -35,11 +35,18 @@ const removeNode = (id) =>{
 
   if(head.id===id)return<></>
 
-  for(const item of head.items){
-    remove(id,item)
-  }
- 
-  return head;
+ const indexToRemove = head.items.findIndex(obj => obj.id === id);
+
+// Remove the object at the specified index
+if (indexToRemove !== -1) {
+  head.items.splice(indexToRemove, 1);
+  return
+}
+
+ for(const item of head.items){
+     remove(id,item)
+ }
+return head;
 }
 
 const remove=(id,head)=>{
