@@ -34,7 +34,13 @@ const removeNode = (id)=>{
 
      const head=JSON.parse(JSON.stringify(tree));
 
-    head.items.find
+    const indexToRemove=head.items.findIndex(obj => obj.id === id)
+
+    if(indexToRemove!==-1){
+      head.items.splice(indexToRemove,1)
+    }
+
+    setTree(head)
 }
 
 const addNode=(id,newNode,currentNode) =>{
