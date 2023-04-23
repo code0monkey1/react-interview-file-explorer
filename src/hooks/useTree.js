@@ -45,14 +45,15 @@ const removeNode = (id)=>{
 }
 
 const removeNodeWithId=(id,head)=>{
-      
-      const indexOfItem = head.items.find(item => item.id===id)
-       
-      if(indexOfItem!==-1){
-         head.items = head.items.filter(item => item.id!==indexOfItem)
-         return
+    
+      // Find the index of the object to remove
+      const indexToRemove = head.items.findIndex(obj => obj.id === id);
+
+      // Remove the object at the specified index
+      if (indexToRemove !== -1) {
+        head.items.splice(indexToRemove, 1);
+        return;
       }
-      
       for(const node of head.items){
            removeNodeWithId(id,node)
       }
