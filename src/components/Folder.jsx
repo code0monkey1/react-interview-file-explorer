@@ -18,7 +18,7 @@ const Folder = ({data}) => {
      <div 
       onClick={()=>{setOpen(!open)}} 
       style={{width:"20rem",display:"flex",justifyContent:"space-between"}} >    
-        <Item data={data} />
+        <Item data={data} open={open}/>
      </div>
      
       <div  style={styles.foldersStyle}>
@@ -31,12 +31,12 @@ const Folder = ({data}) => {
 export default Folder
 
 
-const Item=({data})=>{
+const Item=({data,open})=>{
 
  return<>
   
       <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-      <div onClick={(e)=>{e.stopPropagation()}} style={{display:data.isFolder?"block":"none"}}>
+      <div onClick={(e)=>{e.stopPropagation()}} style={{display:data.isFolder&&open?"block":"none"}}>
           <button>Add File +</button>
           <button>Add Folder +</button>
       </div>
