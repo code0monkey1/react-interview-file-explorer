@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 const Folder = ({data}) => {
      const [open,setOpen]=useState(false)
@@ -6,6 +6,7 @@ const Folder = ({data}) => {
       visible: false,
       isFolder:false
     })
+    const inputRef =useRef()
 
   const styles={
     foldersStyle:{
@@ -28,6 +29,15 @@ const Folder = ({data}) => {
     })
    
   }
+
+  const addNode=(e)=>{
+    
+    if(e.key==="Enter" && inputRef.current.value.trim()){
+        
+        console.log("The value is ",inputRef.current.value.trim())
+
+    }
+  }
    return<>
      <div 
       onClick={()=>{setOpen(!open)}}  >    
@@ -41,7 +51,7 @@ const Folder = ({data}) => {
           </div>
         { showInput.visible && <div style={{paddingLeft:"2rem"}}>
             <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
-              <input onKeyDown={(e)=>{if(e.key==="Enter")console.log("Enter pressed")}} autoFocus type="text" onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
+              <input onKeyDown={(e)=>addNode(e)} ref={inputRef} autoFocus type="text" onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
             </span> 
           </div>
          }
