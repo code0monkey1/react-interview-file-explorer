@@ -32,7 +32,7 @@ export default Folder
 
 
 const Item=({data,open})=>{
-
+ console.log(data.name,"open",open)
  return<>
   
       <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
