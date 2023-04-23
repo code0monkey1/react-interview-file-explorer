@@ -66,7 +66,8 @@ const Folder = ({data,addNewNode,removeNode}) => {
           </div>
         { showInput.visible && <div style={{paddingLeft:"2rem"}}>
             <span>{showInput.isFolder?<>🗂️</>:<>📄</>}
-              <input onKeyDown={(e)=>addNode(e,data.id)} ref={inputRef} autoFocus type="text" onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
+              <input onKeyDown={(e)=>addNode(e,data.id)} ref={inputRef} autoFocus type="text" 
+              onBlur={()=>{setShowInput({...showInput,visible:false})}}/>
             </span> 
           </div>
          }
