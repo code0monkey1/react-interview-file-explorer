@@ -50,32 +50,32 @@ function App() {
   }, [inputRef,addNewNode]);
 
 
-    // const getRenderedTree =(node)=>{
+    const getRenderedTree =(node)=>{
       
-    //   if(!node) return
+      if(!node) return
      
-    //   return( <div key={node.id}  style={{marginLeft:`2rem`}}>
-    //     {
-    //     node.isFolder? <> 
-    //           <Folder  data={node} inputRef={inputRef} />
-    //             {
-    //               node.open?node.items.map(item=> getRenderedTree(item)):''
-    //             }
-    //         </>
-    //         : 
-    //            <File data={node}/> 
-    //     }
-    //   </div>)
-    // }
+      return( <div key={node.id}  style={{marginLeft:`2rem`}}>
+        {
+        node.isFolder? <> 
+              <Folder  data={node} inputRef={inputRef} />
+                {
+                  node.open?node.items.map(item=> getRenderedTree(item)):''
+                }
+            </>
+            : 
+               <File data={node}/> 
+        }
+      </div>)
+    }
   
   console.log("The current state is",JSON.stringify(data,null,2))
   
   return (
     <div onClick={({target})=> {toggleOpen(target.id)}} style={{margin:"2rem"}}>
-    
-         <Folder data={data}/>
-      
-     </div>
+      {
+          getRenderedTree(data)
+      } 
+      </div>
 
   );
 }
