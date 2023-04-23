@@ -55,7 +55,7 @@ const Folder = ({data,addNewNode}) => {
       <div >
           <div style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
             <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
-          <div>
+          <div style={{display:data.isFolder?"block":"none"}}>
                 <button  onClick={(e)=>{handleNewFolder(e,false)}}>Add File +</button>
                 <button  onClick={(e)=>{handleNewFolder(e,true)}}>Add Folder +</button>
             </div>  
