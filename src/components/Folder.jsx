@@ -39,12 +39,12 @@ const [showInput,setShowInput]=useState({
      <div style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
         <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
         <div onClick={(e)=>{e.stopPropagation();setShowInput({...showInput,visible:!showInput.visible})}} style={{display:data.isFolder?"block":"none"}}>
-            <button onBlur={()=>{setShowInput({...showInput,visible:false})}} onClick={()=>{setShowInput({...showInput,isFolder:false})}}>Add File +</button>
-            <button onBlur={()=>{setShowInput({...showInput,visible:false})}} onClick={()=>{setShowInput({...showInput,isFolder:true})}}>Add Folder +</button>
+            <button  onClick={()=>{setShowInput({...showInput,isFolder:false})}}>Add File +</button>
+            <button  onClick={()=>{setShowInput({...showInput,isFolder:true})}}>Add Folder +</button>
         </div>  
       </div>
       <div style={{paddingLeft:"2rem",display:showInput.visible?"block":"none"}}>
-         <input type="text"/>
+         <span>{data.isFolder?<>🗂️</>:<>📄</>}<input onBlur={()=>{setShowInput({...showInput,visible:false})}} type="text"/></span> 
       </div>
 
     </div>
