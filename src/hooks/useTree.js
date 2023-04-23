@@ -21,8 +21,8 @@ const useTree=(treeData)=>{
  */
 
 const getNewTree = (tree)=>{
- const head=JSON.parse(JSON.stringify(tree));
-
+ 
+  const head=JSON.parse(JSON.stringify(tree));
  return head
 
 }
@@ -37,7 +37,7 @@ const addNewNode = (id,newNode) =>{
 }
 
 const updateNode=(id,newName)=>{
-        const head=JSON.parse(JSON.stringify(tree));
+        const head=getNewTree(tree)
 
         update(id,newName,head)
        
@@ -59,7 +59,7 @@ const update =(id,newName,head)=>{
 
 const removeNode = (id)=>{
     
-     const head=JSON.parse(JSON.stringify(tree));
+     const head=getNewTree(tree)
     
      if(head.id===id) {
       alert("Cannot Delete Root Node")
