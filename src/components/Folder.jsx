@@ -35,6 +35,8 @@ const [showInput,setShowInput]=useState({
   visible: false,
   isFolder:false
 })
+
+console.log(JSON.stringify(showInput,null,2))
  return <div >
      <div style={{width:"20rem",display:"flex",justifyContent:"space-between"}}>
         <span>{data.isFolder?<>🗂️</>:<>📄</>}{data.name}</span>
@@ -44,7 +46,7 @@ const [showInput,setShowInput]=useState({
         </div>  
       </div>
       <div style={{paddingLeft:"2rem",display:showInput.visible?"block":"none"}}>
-         <span>{data.isFolder?<>🗂️</>:<>📄</>}<input onBlur={()=>{setShowInput({...showInput,visible:false})}} type="text"/></span> 
+         <span>{showInput.isFolder?<>🗂️</>:<>📄</>}<input onBlur={()=>{setShowInput({...showInput,visible:false})}} type="text"/></span> 
       </div>
 
     </div>
