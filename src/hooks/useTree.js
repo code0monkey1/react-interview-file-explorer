@@ -26,14 +26,20 @@ const getDeepCopy = (tree)=>{
   return head
 
 }
-const addNewNode = (id,newNode) =>{
-      
-      const head = getDeepCopy(tree)
-
-      addNode(id,newNode,head);
-
-      setTree(head)
+const addNewNode = (id,newNode) =>setTree( addNode(id,newNode,getDeepCopy(tree)))
     
+
+const addNode=(id,newNode,currentNode) =>{
+       
+      if(id === currentNode.id){
+          currentNode.items.unshift(newNode)
+          return
+      }
+      
+      for ( const node of currentNode.items)
+          addNode(id,newNode,node)
+      
+      return currentNode;
 }
 
 const updateNode=(id,newName)=>{
@@ -89,17 +95,7 @@ const removeNodeWithId=(id,head)=>{
       
 }
 
-const addNode=(id,newNode,currentNode) =>{
-       
-      if(id === currentNode.id){
-          currentNode.items.unshift(newNode);
-          return;
-      }
-      
-      for ( const node of currentNode.items)
-          addNode(id,newNode,node)
-      
-}
+
 
  return{
   tree,
