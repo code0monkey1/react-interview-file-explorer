@@ -13,6 +13,13 @@
 
 ### *Creating a useTree hook*
 
+The useTree hook allows for the above mentioned functional requirements to be afforded .
+
+We will recursively modify the  initial state of the useTree hook , for all the operations .
+
+> Do keep in mind that the state needs to be `deepCopied` , before being modified , as direct modification is not allowed to the react state  
+
+
 ### *Testing a react hook ( testing useTree )*
 
 1. Use the `renderHook`  for rendering a hook.
@@ -67,8 +74,12 @@
             //the state, hence it has to be wrapped in the `act` callback function block
   
               result.current.addNewNode("3",newNode)
+             // same will be applied to rename a node or delete a node from the tree
+             
           })
    
           expect(result.current.tree).toEqual(resultTree)
   ```
+ [Renaming a node / Deleting a node](/src/hooks/useTree.js)
  
+ ##
