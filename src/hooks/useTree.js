@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { getDeepCopy } from "../utils/copy";
 
 const useTree=(treeData)=>{
 
@@ -20,13 +21,7 @@ const useTree=(treeData)=>{
  * 
  */
 
-const getDeepCopy = (tree)=>{
- 
-  const head=JSON.parse(JSON.stringify(tree));
-  return head
-
-}
-const addNewNode = (id,newNode) =>setTree( addNode(id,newNode,getDeepCopy(tree)))
+const addNewNode = (id,newNode) =>setTree(addNode(id,newNode,getDeepCopy(tree)))
     
 
 const addNode=(id,newNode,currentNode) =>{
