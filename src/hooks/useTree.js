@@ -46,12 +46,12 @@ const updateNode=(id,newName)=> setTree(update(id,newName,getDeepCopy(tree)))
 
 
 const update =(id,newName,head)=>{
-       // check if the head has the id , if so , replace it with the new name
+      // check if the head has the id , if so , replace it with the new name
       if(id===head.id){
         head.name=newName
         return head // get the head if the root component is being reamed
       }
-    // else , go the all the child items, and do the same thing
+     // else , go the all the child items, and do the same thing
       for( const node of head.items)
         update(id,newName,node)
       
@@ -87,8 +87,6 @@ const removeNodeWithId=(id,head)=>{
       
       return head;
 }
-
-
 
  return{
   tree,
