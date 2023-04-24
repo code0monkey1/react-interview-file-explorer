@@ -49,14 +49,13 @@ const update =(id,newName,head)=>{
        // check if the head has the id , if so , replace it with the new name
       if(id===head.id){
         head.name=newName
-        return head
+        return head // get the head if the root component is being reamed
       }
     // else , go the all the child items, and do the same thing
-      for( const node of head.items){
+      for( const node of head.items)
         update(id,newName,node)
-      }
-
-      return head
+      
+      return head // this is done, so as to get back the head at the end
 }
 
 
@@ -68,7 +67,7 @@ const removeNode =(id)=>{
       alert("Cannot Delete Root Node")
       return;
     }
-    
+
     setTree(removeNodeWithId(id,head))
 }
 
