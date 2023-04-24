@@ -42,30 +42,25 @@ const addNode=(id,newNode,currentNode) =>{
       return currentNode;
 }
 
-const updateNode=(id,newName)=>{
-         // get a deep
-        const head=getDeepCopy(tree)
+const updateNode=(id,newName)=> setTree(update(id,newName,getDeepCopy(tree)))
 
-        update(id,newName,head)
-        
-        // set the updated tree
-        setTree(head)
-}
 
 const update =(id,newName,head)=>{
        // check if the head has the id , if so , replace it with the new name
       if(id===head.id){
         head.name=newName
-        return
+        return head
       }
     // else , go the all the child items, and do the same thing
       for( const node of head.items){
         update(id,newName,node)
       }
+
+      return head
 }
 
 
-const removeNode = (id)=>{
+const removeNode =(id)=>{
     
      const head=getDeepCopy(tree)
     
@@ -73,10 +68,8 @@ const removeNode = (id)=>{
       alert("Cannot Delete Root Node")
       return;
     }
-         
-    removeNodeWithId(id,head)
     
-    setTree(head)
+    setTree(removeNodeWithId(id,head))
 }
 
 const removeNodeWithId=(id,head)=>{
@@ -87,12 +80,13 @@ const removeNodeWithId=(id,head)=>{
       // Remove the object at the specified index
       if (indexToRemove !== -1) {
         head.items.splice(indexToRemove, 1);
-        return;
+        return head;
       }
 
       for(const node of head.items)
            removeNodeWithId(id,node)
       
+      return head;
 }
 
 
