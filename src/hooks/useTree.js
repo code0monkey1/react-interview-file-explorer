@@ -20,7 +20,7 @@ const useTree=(treeData)=>{
  * 
  */
 
-const getNewTree = (tree)=>{
+const getDeepCopy = (tree)=>{
  
   const head=JSON.parse(JSON.stringify(tree));
   return head
@@ -28,7 +28,7 @@ const getNewTree = (tree)=>{
 }
 const addNewNode = (id,newNode) =>{
       
-      const head = getNewTree(tree)
+      const head = getDeepCopy(tree)
 
       addNode(id,newNode,head);
 
@@ -37,20 +37,22 @@ const addNewNode = (id,newNode) =>{
 }
 
 const updateNode=(id,newName)=>{
-        const head=getNewTree(tree)
+         // get a deep
+        const head=getDeepCopy(tree)
 
         update(id,newName,head)
-       
+        
+        // set the updated tree
         setTree(head)
 }
 
 const update =(id,newName,head)=>{
-      
+       // check if the head has the id , if so , replace it with the new name
       if(id===head.id){
         head.name=newName
         return
       }
-    
+    // else , go the all the child items, and do the same thing
       for( const node of head.items){
         update(id,newName,node)
       }
@@ -59,7 +61,7 @@ const update =(id,newName,head)=>{
 
 const removeNode = (id)=>{
     
-     const head=getNewTree(tree)
+     const head=getDeepCopy(tree)
     
      if(head.id===id) {
       alert("Cannot Delete Root Node")
