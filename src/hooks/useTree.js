@@ -22,7 +22,6 @@ const useTree=(treeData)=>{
  */
 
 const addNewNode = (id,newNode) =>setTree(addNode(id,newNode,getDeepCopy(tree)))
-    
 
 const addNode=(id,newNode,currentNode) =>{
        
@@ -52,7 +51,6 @@ const update =(id,newName,head)=>{
       
       return head // this is done, so as to get back the head at the end
 }
-
 
 const removeNode =(id)=>{
     
