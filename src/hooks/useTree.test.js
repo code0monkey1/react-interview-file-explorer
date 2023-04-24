@@ -47,7 +47,9 @@ describe('file-explorer',()=>{
           id:"1",
           name: "root",
           isFolder: true,
-          items: [{
+          items: [
+            newNode,
+            {
 
           id:"2",
           name: "root",
@@ -58,7 +60,7 @@ describe('file-explorer',()=>{
           id:"3",
           name: "root",
           isFolder: true,
-           items:[newNode]
+           items:[]
           }
         ]
         }
@@ -66,7 +68,7 @@ describe('file-explorer',()=>{
         
         
           act(() => {
-            result.current.addNewNode("3",newNode)
+            result.current.addNewNode("1",newNode)
           })
  
           expect(result.current.tree).toEqual(resultTree)
