@@ -1,14 +1,14 @@
 import { act, renderHook } from '@testing-library/react';
 import folderData from '../data/folderData';
 import useTree from './useTree';
-describe('file-explorer',()=>{
+describe('useTree hook',()=>{
    
-    it('first-test',()=>{
+    it('has the starting state as undefined',()=>{
       const {result} = renderHook(useTree)
       expect(result.current.tree).toEqual(undefined)
     })
 
-    it('gets the initial treeData',()=>{
+    it('has the passed in state when initialized',()=>{ 
       
         const myData=folderData
         const {result} = renderHook(useTree,{initialProps:myData})
@@ -18,7 +18,7 @@ describe('file-explorer',()=>{
         expect(result.current.tree).toBe(myData)
     })
 
-    it('creates a new file/folder in the tree', ()=>{
+    it('adds a new file in the tree, with name as "newNote"', ()=>{
     
         
         let originalTree ={
@@ -68,6 +68,7 @@ describe('file-explorer',()=>{
         
         
           act(() => {
+            // needs to be wrapped in act , as the state is changed  in the process
             result.current.addNewNode("1",newNode)
           })
  
@@ -75,7 +76,7 @@ describe('file-explorer',()=>{
 
     })
 
-    it('removes node if id is provided',()=>{
+    it('removes node with the given "id"',()=>{
            const headNode={ id:"1",
                          name: "root",
                         isFolder: true,
@@ -137,7 +138,7 @@ describe('file-explorer',()=>{
                        })
     
         })
-        it('updates the name if id is given',()=>{
+        it('updates the name of the node with the given "id"',()=>{
              
         let resultTree={ 
           id:"1",

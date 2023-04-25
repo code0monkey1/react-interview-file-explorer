@@ -1,15 +1,11 @@
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getDeepCopy } from "../utils/copy";
 
 const useTree=(treeData)=>{
 
-     const [tree,setTree]=useState(null)
+     const [tree,setTree]=useState(treeData)
 
-     useEffect(() => {
-     
-       setTree(treeData)
-    }, [treeData])
      
 /**
  * @id : string eg:"2",
