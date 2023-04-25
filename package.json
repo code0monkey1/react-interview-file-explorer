@@ -36,8 +36,16 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "babel-jest": "^29.5.0",
     "jest-watch-typeahead": "^0.6.5"
+  },
+  "jest": {
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
   }
+}
 }
