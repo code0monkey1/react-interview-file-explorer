@@ -1,4 +1,4 @@
-import { getDeepCopy } from "../utils/copy";
+import { getDeepCopy } from '../../utils/copy';
 
 
 let originalTree ={
