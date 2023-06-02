@@ -8,8 +8,8 @@ const useTree=(treeData)=>{
 
 
 /**
- * @id : string eg:"2",
- * @newNode : { 
+ * @parm {id} : string eg:"2",
+ * @parm {newNode} : { 
  *     id:string,
  *     name: string,
  *     isFolder: boolean
